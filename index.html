@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link rel="icon" type="image/png" href="assets/favicon.webp">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #212529;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: #1d7e9d;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #e9b321;
+            color: #212529;
+        }
+
+        .btn-primary:hover {
+            background-color: #d9a820;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: #1d7e9d;
+            color: #f8f9fa;
+        }
+
+        .btn-secondary:hover {
+            background-color: #166d8a;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            background-color: #212529;
+            color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+        }
+
+        .hero-name {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(248, 249, 250, 0.3);
+        }
+
+        /* auto-typer */
+        #auto-typer {
+            font-size: 1.5rem;
+            font-weight: normal;
+            color: #ffffff;
+        }
+
+        #typing-text {
+            font-weight: bold;
+            color: #e9b321; /* Highlight color for better visibility 1d7e9d */
+        }
+
+        .cursor {
+            font-weight: bold;
+            color: #1d7e9d;
+            animation: blink 0.8s infinite;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #212529; /* Dark background */
+            z-index: 0; /* Ensures particles are behind text */
+            top: 0;
+            left: 0;
+        }
+
+        /* About Section */
+        #about {
+            background-color: #f8f9fa;
+            padding: 5rem 0;
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-text {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Education Section */
+        #education {
+            padding: 5rem 0;
+            background-color: #ffffff;
+        }
+
+        .education-header {
+            text-align: left;
+            padding: 1.5rem;
+            background: linear-gradient(to right, #1d7e9d, #166d8a);
+            color: #f8f9fa;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .education-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .education-entry {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .education-entry:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .education-degree {
+            font-weight: 700;
+            color: #212529;
+            margin-bottom: 0.5rem;
+            text-align: left;
+        }
+
+        .education-institution {
+            color: #1d7e9d;
+            margin-bottom: 0.5rem;
+            text-align: left;
+        }
+
+        .education-date {
+            font-style: italic;
+            color: #6c757d;
+            text-align: left;
+        }
+
+        /* Skills Section */
+        #skills {
+            background-color: #212529;
+            color: #f8f9fa;
+            padding: 5rem 0;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background-color: rgba(248, 249, 250, 0.05);
+            border-radius: 10px;
+            padding: 1.5rem;
+            min-width: 250px;
+            flex: 1;
+        }
+
+        .skill-category h3 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #1d7e9d;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover .skill-icon {
+            color: #e9b321;
+            text-shadow: 0 0 10px rgba(233, 179, 33, 0.4);
+        }
+
+        .skill-name {
+            font-size: 0.8rem;
+            text-align: center;
+        }
+
+        /* Projects Section */
+        #projects {
+            padding: 5rem 0;
+            background-color: #f8f9fa;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            justify-content: center; /* Ensures centering */
+        }
+
+        .project-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+
+        .project-info {
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .project-title {
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-tag {
+            background-color: #e9b32133;
+            color: #e9b321;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(33, 37, 41, 0.85);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+            padding: 2rem;
+            color: #f8f9fa;
+            text-align: center;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            overflow: auto;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            margin: auto;
+            top: 5%;
+            margin-bottom: 5%;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 10px;
+            position: relative;
+            animation: modalOpen 0.4s;
+        }
+
+        @keyframes modalOpen {
+            from {opacity: 0; transform: translateY(-50px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #212529;
+            background: #f8f9fa;
+            cursor: pointer;
+            z-index: 1001;
+            border: none;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s ease;
+        }
+
+        .close-modal:hover {
+            background: #e9b321;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        .modal-image {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            border-radius: 10px 10px 0 0;
+        }
+
+        @media (max-width: 768px) {
+            .close-modal {
+                top: 8px;
+                right: 8px;
+                font-size: 1.5rem;
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        .modal-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-info {
+            padding: 2rem;
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal-description {
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* Certificates Section */
+        #certificates {
+            background-color: #212529;
+            color: #f8f9fa;
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .certificates-grid {
+            display: grid;
+            /* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); */
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Increase min size */
+            gap: 2rem;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .certificate-item {
+            background-color: rgba(248, 249, 250, 0.05);
+            padding: 0.5rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .certificate-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .certificate-img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .certificate-item:hover .certificate-img {
+            transform: scale(1.05);
+        }
+
+        .certificate-item p {
+            font-size: 1rem;
+            margin-top: 1rem;
+            font-weight: bold;
+            color: #e9b321;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        /* Footer Section */
+        #footer {
+            background-color: #212529;
+            color: #f8f9fa;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .social-icons {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .social-icon {
+            font-size: 1.8rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            color: #e9b321;
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 768px) {
+            .hero-name {
+                font-size: 3rem;
+            }
+            
+            .hero-tagline {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section id="hero">
+        <div id="particles-js"></div>
+        <div class="hero-content">
+            <h1 class="hero-name">Prathamesh Vaidya</h1>
+            <p id="auto-typer" style="margin-bottom: 10px;">I like <span id="typing-text"></span><span class="cursor">|</span></p>
+            <a href="#about" class="btn btn-primary">About Me</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="assets\my_profile_imresizer.jpg" alt="My Profile">
+                </div>
+                <div class="about-text">
+                    <p>Hello! I'm a data-driven Enthusiast with expertise in Python, JavaScript, and Machine Learning. My work spans data analytics, AI, and web development, solving real-world challenges with impactful solutions.</p>
+                    <p>I have built interactive dashboards, ML-powered applications, and business intelligence tools using frameworks like Django, and Power BI. Passionate about innovation and problem-solving, I continuously explore new technologies to create scalable and efficient applications.</p>
+                    <a href="#projects" class="btn btn-primary">View My Projects</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-header">
+                <h3>Academic Background</h3>
+            </div>
+            <div class="education-card">
+                <div class="education-entry">
+                    <h4 class="education-degree">Bachelor of Science in Computer Science</h4>
+                    <p class="education-institution">Thakur College of Science and Commerce</p>
+                    <p class="education-date">2020 - 2023</p>
+                </div>
+                <div class="education-entry">
+                    <h4 class="education-degree">Master of Science in Data Science</h4>
+                    <p class="education-institution">Thakur College of Science and Commerce</p>
+                    <p class="education-date">2023 - Present</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="fab fa-python skill-icon"></i>
+                    <span class="skill-name">Python</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-database skill-icon"></i>
+                    <span class="skill-name">SQL</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-code skill-icon"></i>
+                    <span class="skill-name">Django</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-chart-line skill-icon"></i>
+                    <span class="skill-name">Power BI</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-brain skill-icon"></i>
+                    <span class="skill-name">Machine Learning</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-chart-pie skill-icon"></i>
+                    <span class="skill-name">Data Visualization</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-git-alt skill-icon"></i>
+                    <span class="skill-name">Git</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-github skill-icon"></i>
+                    <span class="skill-name">GitHub</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-python skill-icon"></i>
+                    <span class="skill-name">Python</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-html5 skill-icon"></i>
+                    <span class="skill-name">HTML5</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-css3-alt skill-icon"></i>
+                    <span class="skill-name">CSS3</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-bootstrap skill-icon"></i>
+                    <span class="skill-name">Bootstrap</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-aws skill-icon"></i>
+                    <span class="skill-name">AWS</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-js skill-icon"></i>
+                    <span class="skill-name">JavaScript</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-java skill-icon"></i>
+                    <span class="skill-name">Java</span>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-database skill-icon"></i>
+                    <span class="skill-name">MongoDB</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-project="project1">
+                    <div class="project-image">
+                        <img src="assets/aquasense.png" alt="Project 1"><!-- size: 600x400 -->
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">AquaSense AI</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">Django</span>
+                            <span class="project-tag">Machine Learning</span>
+                            <span class="project-tag">Water Quality Analysis</span>
+                            <span class="project-tag">IoT Integration</span>
+                            <span class="project-tag">Gradient Boosting</span>
+                            <span class="project-tag">Ensemble Models</span>
+                            <span class="project-tag">Environmental Tech</span>
+                            <span class="project-tag">API Integration</span>
+                        </div>
+                    </div>
+                    <div class="project-overlay">
+                        <h3>AquaSense AI</h3>
+                        <p>A Django-based water quality prediction system using multiple machine learning models that provides parameter assessment and treatment suggestions through both manual input and IoT sensor integration.</p>
+                        <div class="project-buttons">
+                            <a href="#" target="_blank" onclick="event.stopPropagation()" class="btn btn-secondary btn-sm">View Live</a>
+                            <a href="https://github.com/Prathameshv07/AquaSense_AI" target="_blank" onclick="event.stopPropagation()" class="btn btn-secondary btn-sm">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card" data-project="project2">
+                    <div class="project-image">
+                        <img src="assets/codex.jpeg" alt="Project 2"><!-- size: 600x400 -->
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">CodeX Drink Insights</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">Power BI</span>
+                            <span class="project-tag">Data Visualization</span>
+                            <span class="project-tag">Market Analysis</span>
+                            <span class="project-tag">Survey Data</span>
+                            <span class="project-tag">Consumer Insights</span>
+                            <span class="project-tag">Marketing Strategy</span>
+                            <span class="project-tag">Dashboard Design</span>
+                            <span class="project-tag">Business Intelligence</span>
+                        </div>
+                    </div>
+                    <div class="project-overlay">
+                        <h3>CodeX Drink Insights</h3>
+                        <p>A Power BI dashboard analyzing survey data from 10,000 respondents to provide strategic insights for CodeX, a German energy drink company entering the Indian market.</p>
+                        <div class="project-buttons">
+                            <a href="https://app.powerbi.com/view?r=eyJrIjoiZjM1ZjUzOTktYjAwNS00NjUwLWEwNzUtN2JiODI5YWI2MWI2IiwidCI6IjIwOWFiZTg0LWQ3NjYtNGI0My1iN2E0LTU3NmMxZmUyODk5NyJ9" target="_blank" onclick="event.stopPropagation()" class="btn btn-secondary btn-sm">View Live</a>
+                            <a href="https://github.com/Prathameshv07/CodeX-Drink-Insights" target="_blank" onclick="event.stopPropagation()" class="btn btn-secondary btn-sm">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card" data-project="project3">
+                    <div class="project-image">
+                        <img src="assets/plag.png" alt="Project 3"><!-- size: 600x400 -->
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Plagiarism Detection using ML</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Flask</span>
+                            <span class="project-tag">Machine Learning</span>
+                            <span class="project-tag">Web Development</span>
+                            <span class="project-tag">NLP</span>
+                            <span class="project-tag">Text Analysis</span>
+                            <span class="project-tag">Google Search API</span>
+                            <span class="project-tag">KMP Algorithm</span>
+                            <span class="project-tag">Plagiarism Detection</span>
+                        </div>
+                    </div>
+                    <div class="project-overlay">
+                        <h3>Plagiarism Detection using ML</h3>
+                        <p>A web-based tool that detects plagiarism by comparing text against internet sources and between files using Python and the KMP algorithm.</p>
+                        <div class="project-buttons">
+                            <a href="#" target="_blank" onclick="event.stopPropagation()" class="btn btn-secondary btn-sm">View Live</a>
+                            <a href="https://github.com/Prathameshv07/Plagiaism-Detection-using-ML-Project" target="_blank" onclick="event.stopPropagation()" class="btn btn-secondary btn-sm">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card" data-project="project4">
+                    <div class="project-image">
+                        <img src="assets/atliq.webp" alt="Project 4"><!-- size: 600x400 -->
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Atliq Mart Analysis</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Data Analysis</span>
+                            <span class="project-tag">Pandas</span>
+                            <span class="project-tag">Matplotlib</span>
+                            <span class="project-tag">Retail Analytics</span>
+                            <span class="project-tag">Promotional Analysis</span>
+                            <span class="project-tag">Data Visualization</span>
+                            <span class="project-tag">Business Intelligence</span>
+                        </div>
+                    </div>
+                    <div class="project-overlay">
+                        <h3>Atliq Mart Analysis</h3>
+                        <p>A data-driven analysis of promotional campaigns for AtliQ Mart retail chain using Python to identify high-performing promotions and provide actionable insights.</p>
+                        <div class="project-buttons">
+                            <a href="https://colab.research.google.com/drive/1DD3BrZoOGeeRZvhqwjUORCr1aD2NFXII" target="_blank" onclick="event.stopPropagation()" class="btn btn-secondary btn-sm">View Live</a>
+                            <a href="https://github.com/Prathameshv07/Atliq-Mart-Analysis" target="_blank" onclick="event.stopPropagation()" class="btn btn-secondary btn-sm">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modals -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-image">
+                <img id="modalImage" src="" alt="Project Detail">
+            </div>
+            <div class="modal-info">
+                <h2 id="modalTitle" class="modal-title"></h2>
+                <p id="modalDescription" class="modal-description"></p>
+                <div id="modalTags" class="modal-tags"></div>
+                <div class="modal-buttons">
+                    <a id="modalDemo" href="#" class="btn btn-secondary">View Live</a>
+                    <a id="modalGithub" href="#" class="btn btn-secondary">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Certificates Section -->
+    <section id="certificates">
+        <div class="container">
+            <h2 class="section-title">Certificates</h2>
+            <div class="certificates-grid">
+
+                <!-- Certificate 1 -->
+                <div class="certificate-item">
+                    <a href="https://www.hackerrank.com/certificates/4dc2ea3b6fb1" target="_blank">
+                        <img src="assets/sql_certificate.jpg" alt="SQL Certificate" class="certificate-img">
+                    </a>
+                    <p style="margin-bottom: 10px;">SQL Certificate</p>
+                </div>
+
+                <!-- Certificate 2 -->
+                <div class="certificate-item">
+                    <a href="https://www.hackerrank.com/certificates/af31a6ef0036" target="_blank">
+                        <img src="assets/python_certificate.jpg" alt="Python Certificate" class="certificate-img">
+                    </a>
+                    <p style="margin-bottom: 10px;">Python Certificate</p>
+                </div>
+
+                <!-- Certificate 3 -->
+                <div class="certificate-item">
+                    <a href="https://www.credly.com/earner/earned/badge/ef9bf812-4ed7-4dc0-8607-e1b974c55676" target="_blank">
+                        <img src="assets/Alteryx_Foundational_Micro_Credential_Badge.jpg" alt="Alteryx Foundational" class="certificate-img">
+                    </a>
+                    <p style="margin-bottom: 10px;">Alteryx Foundational</p>
+                </div>
+
+                <!-- Certificate 4 -->
+                <div class="certificate-item">
+                    <a href="https://www.credly.com/earner/earned/badge/4ba2cf1c-6202-4cf3-9fc5-0ff05cf06b75" target="_blank">
+                        <img src="assets/Machine_Learning_Fundamentals_Micro_Credential_Badge.jpg" alt="Machine Learning Fundamentals" class="certificate-img">
+                    </a>
+                    <p style="margin-bottom: 10px;">Machine Learning Fundamentals</p>
+                </div>
+
+                <!-- Certificate 5 -->
+                <div class="certificate-item">
+                    <a href="https://www.credly.com/earner/earned/badge/b08e8797-401e-4be8-a01b-fb04640b806a" target="_blank">
+                        <img src="assets/Alteryx_Auto_Insights_Micro_Credential_Badge.jpg" alt="Alteryx Auto Insights" class="certificate-img">
+                    </a>
+                    <p style="margin-bottom: 10px;">Alteryx Auto Insights</p>
+                </div>
+
+                <!-- Certificate 6 -->
+                <div class="certificate-item">
+                    <a href="https://www.credly.com/earner/earned/badge/8e78a123-012e-43e9-9e90-a6dc01590e7e" target="_blank">
+                        <img src="assets/AWS_Academy_Graduate___AWS_Academy_Introduction_to_Cloud_Semester_2_Badge.jpg" alt="AWS Academy Introduction to Cloud Semester 2" class="certificate-img">
+                    </a>
+                    <p style="margin-bottom: 10px;">AWS Academy Introduction to Cloud Semester 2</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="footer">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/prathameshv07/" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/prathameshv07" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="mailto:prathameshsvaidya77@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p class="copyright">© 2025 Prathamesh Vaidya. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Particles.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+
+
+    <!-- JavaScript for Node Animation and Modal -->
+    <script>  
+        
+        function openModal(event) {
+            // Ensure modal only opens if clicked outside buttons
+            const modal = document.getElementById("project-modal");
+            modal.style.display = "block";
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            particlesJS("particles-js", {
+                "particles": {
+                    "number": {
+                        "value": 35,
+                        "density": {
+                            "enable": true,
+                            "value_area": 400
+                        }
+                    },
+                    "color": {
+                        "value": "#ffffff"  /* Default color for nodes */
+                    },
+                    "shape": {
+                        "type": "circle"
+                    },
+                    "opacity": {
+                        "value": 0.7,
+                        "random": false
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#ffffff",
+                        "opacity": 0.6,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 2,
+                        "direction": "none",
+                        "out_mode": "out"
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "grab"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 180,
+                            "line_linked": {
+                                "opacity": 1,
+                                "color": "#e9b321" /* Nodes turn orange when cursor is near */
+                            }
+                        },
+                        "bubble": {
+                            "distance": 200,
+                            "size": 10,
+                            "duration": 2
+                        },
+                        "repulse": {
+                            "distance": 150,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
+        });
+
+        const words = [
+            "Data Analyst",
+            "Artificial Intelligence",
+            "Machine Learning",
+            "Deep Learning",
+            "Natural Language Processing",
+            "Computer Vision",
+            "Backend Dev"
+        ];
+    
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingSpeed = 100; // Speed of typing
+        const deleteSpeed = 50;  // Speed of deleting
+        const pauseTime = 1000;  // Time before deleting
+    
+        function typeEffect() {
+            const typingText = document.getElementById("typing-text");
+    
+            if (!isDeleting && charIndex <= words[wordIndex].length) {
+                typingText.innerHTML = words[wordIndex].substring(0, charIndex);
+                charIndex++;
+                setTimeout(typeEffect, typingSpeed);
+            } 
+            else if (isDeleting && charIndex >= 0) {
+                typingText.innerHTML = words[wordIndex].substring(0, charIndex);
+                charIndex--;
+                setTimeout(typeEffect, deleteSpeed);
+            } 
+            else {
+                isDeleting = !isDeleting;
+    
+                if (!isDeleting) {
+                    wordIndex = (wordIndex + 1) % words.length;
+                }
+    
+                setTimeout(typeEffect, pauseTime);
+            }
+        }
+    
+        document.addEventListener("DOMContentLoaded", typeEffect);
+
+        // Project Modal
+        document.addEventListener('DOMContentLoaded', function() {
+            const projectCards = document.querySelectorAll('.project-card');
+            const modal = document.getElementById('projectModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalDescription = document.getElementById('modalDescription');
+            const modalTags = document.getElementById('modalTags');
+            const modalDemo = document.getElementById('modalDemo');
+            const modalGithub = document.getElementById('modalGithub');
+            const closeModal = document.querySelector('.close-modal');
+            
+            // Project details
+            const projectDetails = {
+                project1: {
+                    title: 'AquaSense AI',
+                    description: "AquaSense AI is a sophisticated water quality analysis platform built with Django that employs ten different machine learning models, including Linear Regression, Polynomial Regression, SVR, Decision Trees, Random Forest, Gradient Boosting, and other ensemble models. The system analyzes water parameters through two input methods: manual entry of seven parameters (temperature, dissolved oxygen, pH, conductivity, BOD, nitrate, and total coliform) or IoT sensor data integration for four key parameters. After analysis, the primary GBR model provides predictions, followed by an ensemble assessment from all ten models. The platform's unique feature is its comprehensive suggestion system, offering remediation methods through three approaches: Ayurvedic treatments, scientific interventions, and cross-verification techniques. The application includes a user-friendly interface with dedicated sections explaining challenges, vision, and mission, plus a Firebase-connected contact system for user inquiries and feedback.",
+                    image: 'assets/aquasense.png', // size: 800x500
+                    tags: ['Django', 'Machine Learning', 'Water Quality Analysis', 'IoT Integration', 'Gradient Boosting', 'Ensemble Models', 'Environmental Tech', 'API Integration'],
+                    demo: '#',
+                    github: 'https://github.com/Prathameshv07/AquaSense_AI'
+                },
+                project2: {
+                    title: 'CodeX Drink Insights',
+                    description: 'This project transformed survey data from 10,000 respondents across 10 Indian cities into actionable marketing intelligence for CodeX energy drinks. Using Power BI, I created an interactive dashboard that reveals key consumer demographics, preferences, and purchasing behaviors. The analysis uncovered gender and age-based consumption patterns, preferred ingredients and packaging, market leaders and their competitive advantages, and optimal marketing channels for different demographic segments. The dashboard features an intuitive interface with curated color palettes, custom visualizations, and advanced calculations using DAX. The insights provided clear direction for product development, pricing strategy, marketing campaigns, and geographical focus areas, helping CodeX establish and grow its presence in the Indian market.',
+                    image: 'assets/codex.jpeg', // size: 800x500
+                    tags: ['Power BI', 'Data Visualization', 'Market Analysis', 'Survey Data', 'Consumer Insights', 'Marketing Strategy', 'Dashboard Design', 'Business Intelligence'],
+                    demo: 'https://app.powerbi.com/view?r=eyJrIjoiZjM1ZjUzOTktYjAwNS00NjUwLWEwNzUtN2JiODI5YWI2MWI2IiwidCI6IjIwOWFiZTg0LWQ3NjYtNGI0My1iN2E0LTU3NmMxZmUyODk5NyJ9',
+                    github: 'https://github.com/Prathameshv07/CodeX-Drink-Insights'
+                },
+                project3: {
+                    title: 'Plagiarism Detection using ML',
+                    description: 'This innovative plagiarism detection tool uses machine learning and text analysis to identify copied content from two sources: the internet and file comparisons. The web-based application features a clean interface where users can input text that is then processed and searched against internet sources using the Google Search API. The system highlights similar content, calculates plagiarism percentage, and generates detailed reports showing which websites contain matching text. Additionally, the tool enables file-to-file comparison using the Knuth-Morris-Pratt (KMP) pattern matching algorithm, providing efficient detection of similarities between documents. This dual-approach system offers educational institutions and content creators a comprehensive solution for maintaining content originality and academic integrity.',
+                    image: 'assets/plag.png', // size: 800x500
+                    tags: ['Python', 'Flask', 'Machine Learning', 'Web Development', 'NLP', 'Text Analysis', 'Google Search API', 'KMP Algorithm', 'Plagiarism Detection'],
+                    demo: '#',
+                    github: 'https://github.com/Prathameshv07/Plagiaism-Detection-using-ML-Project'
+                },
+                project4: {
+                    title: 'Atliq Mart Analysis',
+                    description: "A comprehensive analysis of AtliQ Mart's promotional campaigns during Diwali 2023 and Sankranti 2024 festivals across 50 supermarkets in southern India. Using Python's data analysis libraries, I evaluated store performance, promotion effectiveness, and product category responses to provide actionable insights for the Sales Director. The analysis includes calculation of key performance metrics like Incremental Revenue (IR) and Incremental Sold Units (ISU), citywise revenue analysis with visualizations, promotion type effectiveness comparisons, and product category performance evaluation. The project delivered clear recommendations on which promotions performed best and which stores needed improvement, enabling data-driven decision making for future promotional strategies.",
+                    image: 'assets/atliq.webp', // size: 800x500
+                    tags: ['Python', 'Data Analysis', 'Pandas', 'Matplotlib', 'Retail Analytics', 'Promotional Analysis', 'Data Visualization', 'Business Intelligence'],
+                    demo: 'https://colab.research.google.com/drive/1DD3BrZoOGeeRZvhqwjUORCr1aD2NFXII?usp=sharing',
+                    github: 'https://github.com/Prathameshv07/Atliq-Mart-Analysis'
+                }
+            };
+            
+            // Open modal when clicking on project
+            projectCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const projectId = this.getAttribute('data-project');
+                    const project = projectDetails[projectId];
+                    
+                    modalImage.src = project.image;
+                    modalTitle.textContent = project.title;
+                    modalDescription.textContent = project.description;
+                    
+                    // Clear and create tags
+                    modalTags.innerHTML = '';
+                    project.tags.forEach(tag => {
+                        const tagSpan = document.createElement('span');
+                        tagSpan.className = 'project-tag';
+                        tagSpan.textContent = tag;
+                        modalTags.appendChild(tagSpan);
+                    });
+                    
+                    modalDemo.href = project.demo;
+                    modalGithub.href = project.github;
+                    
+                    modal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+                });
+            });
+            
+            // Close modal
+            closeModal.addEventListener('click', function() {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+            });
+            
+            // Close modal when clicking outside
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        // Smooth scrolling for navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        const offsetTop = targetElement.offsetTop;
+                        
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
