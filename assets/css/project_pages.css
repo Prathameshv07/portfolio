@@ -156,9 +156,11 @@ body {
     display: flex;
     gap: 1rem;
     margin-top: 3rem;
+    flex-wrap: wrap; /* Ensures buttons wrap properly */
 }
 
 .btn {
+    flex: 1;
     padding: 0.75rem 1.5rem;
     text-decoration: none;
     border-radius: 5px;
@@ -190,17 +192,18 @@ body {
 
 @media (max-width: 768px) {
     .project-detail-title {
-        font-size: 2rem;
+        font-size: 1.57rem;
         bottom: 20px;
         left: 20px;
     }
     
+    /* Adjust breakpoint as needed */
     .project-links {
-        flex-direction: column;
+        flex-wrap: nowrap; /* Prevents wrapping */
     }
     
-    .btn {
-        width: 100%;
-        text-align: center;
+    .project-links .btn {
+        flex: unset;
+        width: auto; /* Keeps natural button size */
     }
 }

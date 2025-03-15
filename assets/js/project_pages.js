@@ -8,12 +8,21 @@ document.addEventListener('DOMContentLoaded', function() {
         const projectDetailContainer = document.querySelector('.project-detail-container');
         projectDetailContainer.classList.remove('active');
         
-        // After animation completes, navigate back if needed
+        // After animation completes, navigate back if possible
         setTimeout(() => {
-            window.history.back();
+            if (window.history.length > 1) {
+                window.history.back(); // Go back if history exists
+            } else {
+                // Check referrer and redirect accordingly
+                if (document.referrer.includes("index.html")) {
+                    window.location.href = "/index.html#projects";
+                } else {
+                    window.location.href = "beast_projects.html#projects";
+                }
+            }
         }, 300);
     });
-    
+
     // Make the project detail page active when loaded
     const projectDetailContainer = document.querySelector('.project-detail-container');
     projectDetailContainer.classList.add('active');
