@@ -15,7 +15,7 @@ Welcome to my personal portfolio – a responsive, interactive showcase built wi
 This portfolio is both a personal website and a demonstration of my coding abilities. It’s designed to be a quick snapshot for recruiters, collaborators, and anyone interested in my journey as a developer.
 
 ## 🔗 Live Demo:
-[View Portfolio]([#](http://prathameshv07.github.io/portfolio)) 
+[View Portfolio](http://prathameshv07.github.io/portfolio) 
 
 ## License
 
