@@ -1,4 +1,4 @@
-Welcome to my personal portfolio – a responsive, interactive showcase built with **HTML**, **CSS**, and **JavaScript** to demonstrate my front-end development skills.
+Welcome to my personal portfolio – a responsive, interactive showcase built with **HTML**, **CSS**, and **JavaScript** to demonstrate my skills.
 
 ## 🚀 What You'll Find:
 - ✅ **Projects**: Real-world examples with clear, detailed explanations
