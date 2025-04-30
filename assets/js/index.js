@@ -124,6 +124,8 @@ function typeEffect() {
 
 document.addEventListener("DOMContentLoaded", typeEffect);
 
+
+/* form validation */
 function toggleSection(sectionType) {
     // Get all content divs and buttons
     const contents = document.querySelectorAll('.toggle-content');
