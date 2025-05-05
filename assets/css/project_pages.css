@@ -1,5 +1,7 @@
 body {
     font-family: 'Lato', sans-serif;
+    color: #333;
+    line-height: 1.6;
 }
 
 /* Project Detail Page Styles */
@@ -24,6 +26,8 @@ body {
 
 .project-detail-header {
     position: relative;
+    background-color: #ffffff;
+    padding-top: 20px;
 }
 
 .close-button {
@@ -51,62 +55,70 @@ body {
     transform: scale(1.1);
 }
 
-/* .project-detail-image {
-    width: 100%;
-    height: 50vh;
-    overflow: hidden;
-}
-
-.project-detail-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-} */
-
+/* Updated Project Image Container Styles */
 .project-detail-image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-    height: 35%;
-    overflow: hidden;
     position: relative;
+    width: 65%; /* Container takes 70% of width instead of 100% */
+    height: 400px;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    align-items: center;
+    margin: 0 auto; /* Center the container */
+    background-color: #f5f5f5;
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
 }
 
-.project-detail-image img {
+.project-detail-image .image-wrapper {
+    position: relative;
     width: 100%;
-    height: 10%;
-    object-fit: cover;
-    object-position: center center;
-
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
-/* For images that need to be contained rather than cropped */
-/* .project-detail-image.contain-image img {
-    object-fit: contain;
-    max-height: 80%;
-    max-width: 80%;
-} */
+.project-detail-image .background-blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    filter: blur(8px);
+    opacity: 0.7;
+    z-index: 1;
+    border-radius: 10px;
+}
+
+/* Reset default image styles to let our JS handle the positioning */
+.project-detail-image img {
+    position: relative;
+    z-index: 2;
+    /* Removing fixed constraints to let JS handle sizing */
+    /* max-width and max-height will be set dynamically */
+    display: block;
+}
 
 .project-detail-title {
-    margin-left: 9%;
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    color: #ffffff;
-    font-size: 2.5rem;
+    text-align: center; /* Center the title */
+    margin: 30px auto 0;
+    color: #1d7e9d; /* Changed color */
+    font-size: 2.8rem; /* Increased font size */
     font-weight: 700;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    position: relative; /* Changed from absolute to relative */
+    bottom: auto;
+    left: auto;
+    text-shadow: none;
+    padding: 0 20px;
 }
 
 .project-detail-content {
-    max-width: 1200px;
+    max-width: 900px; /* Reduced from 1200px for better readability */
     margin: 0 auto;
     padding: 40px 20px;
+    font-size: 1.1rem; /* Increased base font size */
 }
 
 .project-tags {
@@ -114,40 +126,63 @@ body {
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-bottom: 2rem;
+    justify-content: left; /* Center tags */
 }
 
 .project-tag {
     background-color: #e9b421c1;
     color: #000000;
-    padding: 0.3rem 0.8rem;
+    padding: 0.4rem 0.9rem; /* Slightly larger padding */
     border-radius: 4px;
-    font-size: 0.9rem;
+    font-size: 1rem; /* Increased font size */
 }
 
+/* Heading styles with decorative element after them */
 .project-description h2 {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    color: #000000;
+    margin-top: 2.5rem; /* Increased spacing above */
+    margin-bottom: 1.2rem; /* Increased spacing below */
+    color: #000000; /* Changed color to match theme */
+    font-size: 1.8rem; /* Increased font size */
+    position: relative;
+    padding-bottom: 0.8rem; /* Space for the decorative line */
+}
+
+/* Add decorative line after headings */
+.project-description h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: #e9b321; /* Gold color line */
+    border-radius: 2px;
 }
 
 .project-description p {
-    margin-bottom: 0.65rem;
-    line-height: 1;
+    margin-bottom: 1.2rem; /* Increased spacing */
+    line-height: 1.6; /* Increased line height for better readability */
+    font-size: 1.1rem; /* Increased font size */
 }
 
 .project-description ul {
-    margin-top: 0.65rem;
-    margin-bottom: 0.65rem;
-    padding-left: 20px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 25px;
 }
 
 .project-description li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem; /* Increased spacing */
+    font-size: 1.1rem; /* Increased font size */
+}
+
+.project-description li li {
+    font-size: 1.05rem; /* Slightly smaller for nested lists */
 }
 
 .iframe-container {
     margin: 2rem 0;
-    border-radius: 8px;
+    border-radius: 10px; /* Increased rounding */
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
@@ -156,7 +191,8 @@ body {
     display: flex;
     gap: 1rem;
     margin-top: 3rem;
-    flex-wrap: wrap; /* Ensures buttons wrap properly */
+    flex-wrap: wrap;
+    justify-content: left; /* Center the buttons */
 }
 
 .project-links .btn {
@@ -166,11 +202,12 @@ body {
 
 .btn {
     flex: 1;
-    padding: 0.75rem 1.5rem;
+    padding: 0.8rem 1.8rem; /* Larger buttons */
     text-decoration: none;
     border-radius: 5px;
     font-weight: 600;
     transition: all 0.3s ease;
+    font-size: 1.1rem; /* Larger text */
 }
 
 .btn-primary {
@@ -180,7 +217,7 @@ body {
 
 .btn-primary:hover {
     background-color: #166d8a;
-    color: #212529;
+    color: #ffffff;
     transform: translateY(-2px);
 }
 
@@ -191,24 +228,58 @@ body {
 
 .btn-secondary:hover {
     background-color: #d3a01e;
-    color: #f8f9fa;
+    color: #ffffff;
     transform: translateY(-2px);
 }
 
-@media (max-width: 768px) {
-    .project-detail-title {
-        font-size: 1.57rem;
-        bottom: 20px;
-        left: 20px;
+/* Media queries for responsive layouts */
+@media (max-width: 992px) {
+    .project-detail-image {
+        width: 85%; /* Wider on medium screens */
+        height: 350px;
     }
     
-    /* Adjust breakpoint as needed */
+    .project-detail-title {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-detail-image {
+        width: 90%; /* Even wider on small screens */
+        height: 300px;
+    }
+    
+    .project-detail-title {
+        font-size: 2rem;
+    }
+    
+    .project-detail-content {
+        font-size: 1rem;
+    }
+    
+    .project-description h2 {
+        font-size: 1.6rem;
+    }
+    
     .project-links {
-        flex-wrap: nowrap; /* Prevents wrapping */
+        flex-direction: column;
     }
     
     .project-links .btn {
-        flex: unset;
-        width: auto; /* Keeps natural button size */
+        width: 100%;
+        text-align: center;
     }
 }
+
+@media (max-width: 576px) {
+    .project-detail-image {
+        width: 95%;
+        height: 250px;
+    }
+    
+    .project-detail-title {
+        font-size: 1.8rem;
+    }
+}
+/* Project detail image styles are specified at the end of this file */

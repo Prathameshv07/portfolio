@@ -110,7 +110,7 @@ a {
 
 .hero-name {
     font-size: 4rem;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     text-shadow: 0 0 10px rgba(248, 249, 250, 0.3);
 }
 
@@ -207,14 +207,13 @@ a {
 }
 
 /* Toggle Buttons */
-.section-toggle {
+/* .section-toggle {
     display: flex;
 }
 
 .toggle-btn {
     padding: 0.5rem 1rem;
     background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
     color: #ffffff;
     font-weight: 500;
     cursor: pointer;
@@ -239,6 +238,31 @@ a {
 
 .toggle-btn:hover:not(.active) {
     background-color: rgba(255, 255, 255, 0.15);
+} */
+
+/* Dropdown Select Styling */
+#section-dropdown {
+    padding: 0.5rem 1rem;
+    background-color: #1d7e9d;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 4px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem center;
+    background-size: 1em;
+    min-width: 150px;
+    transition: all 0.3s ease;
+}
+
+#section-dropdown option {
+    background-color: #ffffff;
+    color: #333;
 }
 
 /* Toggle Content */
@@ -335,6 +359,7 @@ a {
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 2rem;
+    margin-bottom: 3rem;
 }
 
 .skill-category {
@@ -381,6 +406,25 @@ a {
     gap: 1.5rem;
 }
 
+/* Libraries & Frameworks section */
+.libraries-title {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.libraries-title::after {
+    width: 100px;
+}
+
+.libraries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(65px, 0.5fr));
+    gap: 1rem;
+    background-color: transparent;
+    padding: 2rem;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+}
+
 .skill-item {
     display: flex;
     flex-direction: column;
@@ -404,8 +448,8 @@ a {
 }
 
 .custom-skill-icon {
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
     object-fit: contain;
     margin-bottom: 0.5rem;
     transition: all 0.3s ease;
@@ -418,7 +462,7 @@ a {
 }
 
 .skill-name {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     text-align: center;
 }
 
@@ -488,10 +532,71 @@ a {
     margin-top: 1.5rem;
 }
 
+/* Functional Areas Section */
+#functional-areas {
+    background-color: #f8f9fa;
+    color: #212529;
+    padding: 5rem 0;
+}
+
+.functional-areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+}
+
+.functional-area-item {
+    background-color: #ffffff;
+    color: #212529;
+    border-radius: 10px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.functional-area-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.functional-area-item .custom-skill-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.functional-area-item h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .functional-areas-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .functional-area-item {
+        padding: 1.5rem;
+    }
+    
+    .functional-area-item .custom-skill-icon {
+        width: 3rem;
+        height: 3rem;
+    }
+}
+
 /* Projects Section */
 #projects {
     padding: 5rem 0;
-    background-color: #f8f9fa;
+    background-color: #ffffff;
 }
 
 .projects-grid {
@@ -518,13 +623,36 @@ a {
 .project-image {
     height: 200px;
     overflow: hidden;
+    position: relative;
 }
 
-.project-image img {
+.project-image .image-wrapper {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-image img.responsive-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
     transition: all 0.5s ease;
+    z-index: 2;
+    position: relative;
+}
+
+.project-image .background-blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    filter: blur(10px);
+    opacity: 0.8;
+    z-index: 1;
 }
 
 .project-card:hover .project-image img {
@@ -715,6 +843,88 @@ a {
     gap: 1rem;
 }
 
+/* Research Section Styles */
+#research {
+    background-color: #f8f9fa;
+    padding: 5rem 0;
+    color: #212529;
+}
+
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 2rem;
+}
+
+.research-item {
+    background-color: #ffffff;
+    color: #212529;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.journal-icon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+.research-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.research-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.research-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+    color: #212529;
+    /* color: #f8f9fa; */
+    font-weight: 600;
+    text-align: left;
+}
+
+.research-journal {
+    color: #1d7e9d;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.research-content .btn-secondary {
+    align-self: flex-start;
+}
+
+@media (max-width: 768px) {
+    .research-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .research-title {
+        font-size: 1.2rem;
+    }
+}
+
+.title-underline {
+    width: 80px;
+    height: 4px;
+    background-color: #1d7e9d;
+    margin: 0 auto;
+    margin-top: -2rem;
+    margin-bottom: 3rem;
+}
+
 /* Certificates Section */
 #certificates {
     background-color: #212529;
@@ -734,6 +944,7 @@ a {
 
 .certificate-item {
     background-color: rgba(248, 249, 250, 0.05);
+    color: #f8f9fa;
     padding: 0.5rem;
     border-radius: 10px;
     transition: transform 0.3s ease;
@@ -825,7 +1036,7 @@ a {
 /* Contact Form Styles */
 .contact-section {
     padding: 5rem 0;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
 }
 
 .section-title {

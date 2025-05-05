@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlyaAloft - Project Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/png" href="../assets/favicon.webp">
+    <link rel="stylesheet" href="../assets/css/project_pages.css">
+    <!-- Add any additional stylesheets here -->
+
+    <meta property="og:title" content="Prathamesh's Portfolio">
+    <meta property="og:url" content="https://prathameshv07.github.io/portfolio/">
+    <meta property="og:image" content="https://prathameshv07.github.io/portfolio/assets/favicon.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:description" content="Welcome to my portfolio!">
+</head>
+<body>
+    <div class="project-detail-container">
+        <div class="project-detail-header">
+            <button class="close-button" aria-label="Close project details">&times;</button>
+            <div class="project-detail-image">
+                <img class="responsive-image" src="../assets/project_images/alyaaloft.png" alt="AlyaAloft PDF Explainer">
+            </div>
+            <h1 class="project-detail-title">AlyaAloft: AI-Powered PDF Analysis</h1>
+        </div>
+        
+        <div class="project-detail-content">
+            <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">FastAPI</span>
+                <span class="project-tag">LLM</span>
+                <span class="project-tag">Vector Search</span>
+                <span class="project-tag">Document Analysis</span>
+                <span class="project-tag">OCR</span>
+                <span class="project-tag">Prompt Techniques</span>
+                <span class="project-tag">Artificial Intelligence</span>
+                <span class="project-tag">Machine Learning</span>
+                <span class="project-tag">NLP</span>
+            </div>
+            
+            <div class="project-description">
+                <h2>Project Overview</h2>
+                <p>AlyaAloft is a sophisticated PDF document analysis and question-answering application that leverages <strong>advanced AI models</strong> to provide detailed responses to user queries about PDF documents. The system is designed to <strong>extract, process, and analyze PDF content</strong> in depth, enabling users to ask natural language questions and receive comprehensive, context-aware answers.</p>
+                
+                <h2>Key Features</h2>
+                <ul>
+                    <li><strong>Document Processing:</strong>
+                        <ul>
+                            <li>Text extraction from PDFs with <strong>OCR support</strong> for scanned documents</li>
+                            <li>Document structure analysis to identify sections and hierarchies</li>
+                            <li>Semantic chunking and embedding for efficient retrieval</li>
+                            <li>Vector-based storage for fast similarity search</li>
+                        </ul>
+                    </li>
+                    <li><strong>AI Response Generation:</strong>
+                        <ul>
+                            <li>Specialized handling for different query types (summary, detailed questions)</li>
+                            <li>Smart fallback mechanisms for unclear or ambiguous queries</li>
+                            <li>Comprehensive responses with evidence from the document</li>
+                            <li>Multiple AI models with fallback options for robustness</li>
+                        </ul>
+                    </li>
+                    <li><strong>User Experience:</strong>
+                        <ul>
+                            <li>Intuitive web interface for document uploads and chat</li>
+                            <li><strong>Real-time WebSocket communication</strong> for interactive responses</li>
+                            <li>Chat history storage with context preservation</li>
+                            <li>Detailed document metadata and organization</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h2>Technical Implementation</h2>
+                <p>AlyaAloft is built with a <strong>layered architecture</strong> that separates concerns and provides clear responsibility boundaries:</p>
+                <ul>
+                    <li>Frontend: Streamlit web UI and REST API clients for user interaction</li>
+                    <li>API Layer: <strong>FastAPI endpoints</strong> for document upload, queries, and WebSocket</li>
+                    <li>Service Layer: Document processing, AI response generation, and structure analysis</li>
+                    <li>Storage Layer: JSON-based storage for documents, vector embeddings, and chat history</li>
+                </ul>
+                
+                <h2>AI Components</h2>
+                <p>The system integrates several advanced AI models for different aspects of document processing:</p>
+                <ul>
+                    <li><strong>Llama-2-7b-chat:</strong> Primary LLM for detailed reasoning and question answering</li>
+                    <li>Flan-T5-Base: Used for summarization and as a fallback option</li>
+                    <li><strong>Sentence Transformers:</strong> For generating text embeddings for semantic search</li>
+                    <li>Specialized prompt templates for different query types and document analysis</li>
+                </ul>
+                
+                <h2>Results & Innovations</h2>
+                <p>AlyaAloft represents significant innovations in document processing and AI-driven information retrieval:</p>
+                <ul>
+                    <li>Advanced query recognition for understanding user intent</li>
+                    <li><strong>Sophisticated prompt engineering</strong> for detailed and accurate responses</li>
+                    <li>Robust fallback mechanisms to handle edge cases and errors</li>
+                    <li><strong>Document structure-aware processing</strong> for context enhancement</li>
+                    <li>End-to-end solution from document upload to interactive questioning</li>
+                </ul>
+            </div>
+            
+            <div class="project-links">
+                <a href="https://github.com/yourusername/alyaaloft" class="btn btn-secondary">GitHub&nbsp;<i class="fab fa-github"></i></a>
+                <a href="#" class="btn btn-primary">Live Demo&nbsp;<i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../assets/js/project-images.js"></script>
+    <script src="../assets/js/project_pages.js"></script>
+</body>
+</html> 

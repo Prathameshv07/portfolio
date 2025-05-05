@@ -19,69 +19,75 @@
 <body>
     <div class="project-detail-container">
         <div class="project-detail-header">
-            <button class="close-button">&times;</button>
+            <button class="close-button" aria-label="Close project details">&times;</button>
             <div class="project-detail-image">
-                <img src="../assets/project_images/nl2sql.png" alt="AtliQ Mart Analysis">
+                <img class="responsive-image" src="../assets/project_images/nl2sql.png" alt="SQL AI Agent">
             </div>
             <h1 class="project-detail-title">SQL AI Agent</h1>
         </div>
         
         <div class="project-detail-content">
             <div class="project-tags">
-                <span class="project-tag">Python</span>
-                <span class="project-tag">MySQL</span>
-                <span class="project-tag">NLP</span>
                 <span class="project-tag">AI Agent</span>
-                <span class="project-tag">SQL Automation</span>
-                <span class="project-tag">Data Retrieval</span>
-                <span class="project-tag">Gemini API</span>
+                <span class="project-tag">NLP</span>
                 <span class="project-tag">Prompt Engineering</span>
+                <span class="project-tag">SQL Automation</span>
+                <span class="project-tag">Gemini API</span>
+                <span class="project-tag">MySQL</span>
             </div>
             
             <div class="project-description">
                 <h2>Project Overview</h2>
-                <p>SQL AI Agent is an AI-powered application designed to convert plain English queries into executable SQL statements. Aimed at simplifying data access for non-technical users, this tool bridges the gap between natural language understanding and structured database querying. The agent interprets user intent, formulates the correct SQL syntax, executes the query on a MySQL database, and returns the results in a readable format.</p>
+                <p>SQL AI Agent is an AI tool that transforms <strong>natural language into SQL queries</strong>, enabling <strong>non-technical users</strong> to access and query MySQL databases effortlessly and efficiently. This project leverages the power of Natural Language Processing (NLP) to allow non-technical users to interact with databases using simple, natural language questions.</p>
                 
-                <h2>Core Functionalities</h2>
+                <h2>Key Features</h2>
                 <ul>
-                    <li><strong>Natural Language Interface: </strong>Users input questions in English and receive relevant data from the database.</li>
-                    <li><strong>Query Generation: </strong>Uses advanced language models (via Gemini API) to convert natural language into syntactically correct SQL queries.</li>
-                    <li><strong>Database Execution: </strong>SQL queries are executed directly against a live MySQL instance.</li>
-                    <li><strong>Result Display: </strong>Outputs are shown in a structured tabular format for easy comprehension.</li>
-                    <li><strong>Robust Error Handling: </strong>Includes validation for queries, syntax checks, and helpful error messages for smoother user experience. </li>
+                    <li><strong>Natural language to SQL conversion</strong> with high accuracy</li>
+                    <li>Context-aware query generation that maintains database integrity</li>
+                    <li>Support for <strong>complex querying</strong> with filtering, joining, and aggregation</li>
+                    <li>User-friendly web interface for seamless interaction</li>
+                    <li>Real-time feedback and query explanation</li>
+                    <li>Secure database connection with proper validation</li>
                 </ul>
-
+                
                 <h2>Technical Implementation</h2>
-                <p>Built with Python 3.8+, the system integrates:</p>
+                <p>The implementation utilizes a robust architecture with several key components:</p>
                 <ul>
-                    <li><strong>Gemini API </strong>for natural language understanding and SQL generation</li>
-                    <li><strong>MySQL Connector </strong>for database access</li>
-                    <li><strong>Database Execution </strong>for local web app deployment (if applicable)</li>
-                    <li><strong>Flask (optional) </strong>to securely manage API keys and configurations</li>
-                    <li>Sample queries and schema included for demonstration and testing purposes</li>
+                    <li>Backend built with <strong>Flask</strong> to serve as the API layer</li>
+                    <li>Integration with <strong>Google's Gemini API</strong> for natural language processing</li>
+                    <li><strong>Custom prompt engineering</strong> techniques to achieve high SQL accuracy</li>
+                    <li>PostgreSQL database integration with proper security measures</li>
+                    <li>Streamlit-based frontend for intuitive user experience</li>
+                    <li>Schema awareness to ensure generated queries align with database structure</li>
                 </ul>
                 
-                <h2>Use Cases & Value</h2>
-                <p>SQL AI Agent empowers business analysts, marketers, and non-technical stakeholders to independently access and explore data without learning SQL. It accelerates data-driven decision-making and promotes self-service analytics in organizations.</p>
+                <h2>Results & Impact</h2>
+                <p>The SQL AI Agent significantly improves database accessibility:</p>
                 <ul>
-                    <li>Future Enhancements
-                        <ul>
-                            <li>Add support for PostgreSQL and SQLite</li>
-                            <li>Incorporate semantic search and schema summarization</li>
-                            <li>Implement user authentication and query history tracking</li>
-                        </ul>
-                    </li>
+                    <li><strong>Reduced need for technical SQL expertise</strong> among business users</li>
+                    <li>Faster data retrieval and analysis processes</li>
+                    <li>Decreased dependency on database administrators for simple queries</li>
+                    <li>Enhanced data exploration capabilities for non-technical team members</li>
                 </ul>
                 
+                <h2>Future Enhancements</h2>
+                <p>Planned improvements for the SQL AI Agent include:</p>
+                <ul>
+                    <li>Support for <strong>additional database systems</strong> beyond PostgreSQL</li>
+                    <li><strong>Advanced visualization</strong> options for query results</li>
+                    <li>Query history and saving functionality</li>
+                    <li>Enhanced error handling and suggestions</li>
+                </ul>
             </div>
             
             <div class="project-links">
-                <a href="https://colab.research.google.com/drive/1DD3BrZoOGeeRZvhqwjUORCr1aD2NFXII?usp=sharing" class="btn btn-primary">View Live&nbsp;<i class="fa-solid fa-up-right-from-square"></i></a>
-                <a href="https://github.com/Prathameshv07/Atliq-Mart-Analysis" class="btn btn-secondary">GitHub&nbsp;<i class="fab fa-github"></i></a>
+                <a href="https://github.com/yourusername/sql-ai-agent" class="btn btn-secondary">GitHub&nbsp;<i class="fab fa-github"></i></a>
+                <a href="#" class="btn btn-primary">Live Demo&nbsp;<i class="fas fa-external-link-alt"></i></a>
             </div>
         </div>
     </div>
     
+    <script src="../assets/js/project-images.js"></script>
     <script src="../assets/js/project_pages.js"></script>
 </body>
 </html>

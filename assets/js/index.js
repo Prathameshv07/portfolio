@@ -79,16 +79,39 @@ document.addEventListener("DOMContentLoaded", function() {
         },
         "retina_detect": true
     });
+    
+    // Initialize AOS animation library
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: false,
+        mirror: true,
+        offset: 50,
+        delay: 0,
+        anchorPlacement: 'top-bottom',
+        disable: 'mobile'
+    });
+
+    // Call adjust images for responsive images
+    adjustImagesByClass('responsive-image');
+    
+    // Also run this when window loads to ensure images are properly handled
+    window.addEventListener('load', function() {
+        adjustImagesByClass('responsive-image');
+    });
 });
 
 const words = [
-    "Data Analyst",
-    "Artificial Intelligence",
+    "Data Analysis",
     "Machine Learning",
-    "Deep Learning",
-    "Natural Language Processing",
+    "Artificial Intelligence",
+    "Vector Search",
+    "Large Language Models",
     "Computer Vision",
-    "Backend Dev"
+    "NLP",
+    "SQL & Database Engineering",
+    "Python Development",
+    "Web Development"
 ];
 
 let wordIndex = 0;
@@ -146,6 +169,19 @@ function toggleSection(sectionType) {
     
     // Add active class to clicked button
     event.target.classList.add('active');
+}
+
+function toggleSectionFromDropdown(sectionType) {
+    // Get all content divs
+    const contents = document.querySelectorAll('.toggle-content');
+    
+    // Hide all content sections
+    contents.forEach(content => {
+        content.classList.remove('active');
+    });
+    
+    // Show selected content
+    document.getElementById(sectionType + '-content').classList.add('active');
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -315,3 +351,155 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 });
+
+/**
+ * Adjusts all images with the specified class to ensure they're fully visible
+ * with a blurred version of the same image as background
+ * @param {string} imageClass - The class name of images to adjust
+ */
+function adjustImagesByClass(imageClass) {
+    console.log(`adjustImagesByClass called for class: ${imageClass}`);
+    const images = document.getElementsByClassName(imageClass);
+    
+    if (images.length === 0) {
+      console.warn(`No images with class "${imageClass}" found.`);
+      return;
+    }
+    
+    console.log(`Found ${images.length} images with class ${imageClass}`);
+    
+    Array.from(images).forEach((img, index) => {
+      console.log(`Processing image ${index + 1}: ${img.src}`);
+      
+      // Skip if image is already in a wrapper with background blur
+      if (img.parentElement.classList.contains('image-wrapper') && 
+          img.parentElement.querySelector('.background-blur')) {
+        console.log(`Image ${index + 1} already has a wrapper and background blur - skipping`);
+        return;
+      }
+      
+      // Create a wrapper div if it doesn't exist
+      let wrapper = img.parentElement;
+      if (!wrapper.classList.contains('image-wrapper')) {
+        wrapper = document.createElement('div');
+        wrapper.classList.add('image-wrapper');
+        img.parentNode.insertBefore(wrapper, img);
+        wrapper.appendChild(img);
+        
+        // Set wrapper styles
+        wrapper.style.overflow = 'hidden';
+        wrapper.style.position = 'relative';
+        wrapper.style.width = '100%';
+        wrapper.style.height = '100%';
+      }
+  
+      // Create blurred background if it doesn't exist yet
+      let bgImage = wrapper.querySelector('.background-blur');
+      if (!bgImage) {
+        bgImage = document.createElement('div');
+        bgImage.classList.add('background-blur');
+        wrapper.insertBefore(bgImage, img);
+        
+        // Set background styles
+        bgImage.style.position = 'absolute';
+        bgImage.style.top = '0';
+        bgImage.style.left = '0';
+        bgImage.style.width = '100%';
+        bgImage.style.height = '100%';
+        bgImage.style.backgroundImage = `url(${img.src})`;
+        bgImage.style.backgroundPosition = 'center';
+        bgImage.style.backgroundSize = 'cover';
+        bgImage.style.filter = 'blur(8px)';
+        bgImage.style.opacity = '0.9';
+        bgImage.style.zIndex = '1';
+      }
+  
+      // Ensure the main image is above the blurred background
+      img.style.position = 'relative';
+      img.style.zIndex = '2';
+      img.style.display = 'block';
+      img.style.margin = '0 auto';
+      
+      // Function to adjust image dimensions based on container and natural image size
+      const adjustImage = function() {
+        // Update the background image
+        bgImage.style.backgroundImage = `url(${img.src})`;
+        
+        // Get container and image dimensions
+        const containerWidth = wrapper.clientWidth;
+        const containerHeight = wrapper.clientHeight;
+        const imgWidth = img.naturalWidth;
+        const imgHeight = img.naturalHeight;
+  
+        // Calculate aspect ratios
+        const containerRatio = containerWidth / containerHeight;
+        const imgRatio = imgWidth / imgHeight;
+        
+        // If in project-image container - use cover approach
+        if (wrapper.closest('.project-image')) {
+          img.style.width = '100%';
+          img.style.height = '100%';
+          img.style.objectFit = 'cover';
+          img.style.objectPosition = 'center';
+          return;
+        }
+        
+        // Handle project detail images in the detail pages
+        if (wrapper.closest('.project-detail-image')) {
+          img.style.maxWidth = '90%';
+          img.style.maxHeight = '90%';
+          img.style.objectFit = 'contain';
+          img.style.objectPosition = 'center';
+          return;
+        }
+
+        // For other images, determine which dimension constrains the image
+        if (imgRatio > containerRatio) {
+          // Image is wider than container (relative to height)
+          // Set width to 100% and let height adjust
+          img.style.width = '100%';
+          img.style.height = 'auto';
+          img.style.maxHeight = '100%';
+          
+          // Center the image vertically if it doesn't fill the height
+          if ((containerWidth / imgRatio) < containerHeight) {
+            img.style.position = 'absolute';
+            img.style.top = '50%';
+            img.style.left = '50%';
+            img.style.transform = 'translate(-50%, -50%)';
+          }
+        } else {
+          // Image is taller than container (relative to width)
+          // Set height to 100% and let width adjust
+          img.style.height = '100%';
+          img.style.width = 'auto';
+          img.style.maxWidth = '100%';
+          
+          // Center the image horizontally if it doesn't fill the width
+          if ((containerHeight * imgRatio) < containerWidth) {
+            img.style.position = 'absolute';
+            img.style.top = '50%';
+            img.style.left = '50%';
+            img.style.transform = 'translate(-50%, -50%)';
+          }
+        }
+      };
+  
+      // Wait for the image to load to get accurate dimensions
+      img.onload = function() {
+        adjustImage();
+      };
+  
+      // Trigger onload even if the image is already loaded
+      if (img.complete) {
+        img.onload();
+      }
+      
+      // Add window resize handler to readjust on viewport changes
+      window.addEventListener('resize', function() {
+        if (img.complete) {
+          adjustImage();
+        }
+      });
+    });
+}

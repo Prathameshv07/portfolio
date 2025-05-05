@@ -26,4 +26,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Make the project detail page active when loaded
     const projectDetailContainer = document.querySelector('.project-detail-container');
     projectDetailContainer.classList.add('active');
+    
+    // Check if the adjustImagesByClass function exists (from project-images.js)
+    if (typeof adjustImagesByClass === 'function') {
+        console.log('Calling adjustImagesByClass from project_pages.js');
+        // Apply the responsive image adjustments
+        adjustImagesByClass('responsive-image');
+    } else {
+        console.warn('adjustImagesByClass function not found. Make sure project-images.js is loaded before project_pages.js');
+    }
 });

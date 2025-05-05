@@ -133,12 +133,19 @@ header nav a:hover {
     gap: 2rem;
 }
 
+/* Project Cards Styles */
 .project-card {
     background-color: #fff;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .project-card:hover {
@@ -149,6 +156,7 @@ header nav a:hover {
 .project-image {
     height: 200px;
     overflow: hidden;
+    position: relative;
 }
 
 .project-image img {
@@ -171,6 +179,7 @@ header nav a:hover {
     margin-bottom: 0.75rem;
     color: #212529;
     font-size: 1.25rem;
+    font-weight: 600;
 }
 
 .project-tags {
@@ -186,11 +195,17 @@ header nav a:hover {
     padding: 0.2rem 0.5rem;
     border-radius: 4px;
     font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.project-tag:hover {
+    background-color: #e9b421;
 }
 
 .project-excerpt {
     color: #555;
     margin-bottom: 1.5rem;
+    line-height: 1.5;
 }
 
 .project-link {
@@ -205,7 +220,7 @@ header nav a:hover {
 }
 
 .project-link:hover {
-    background-color: #0d2f63;
+    background-color: #166d8a;
     transform: translateY(-2px);
 }
 

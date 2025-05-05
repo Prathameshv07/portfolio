@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AquaSense AI - Project Details</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-	<link rel="icon" type="image/webp" href="../assets/favicon.webp">
+    <link rel="icon" type="image/png" href="../assets/favicon.webp">
     <link rel="stylesheet" href="../assets/css/project_pages.css">
     <!-- Add any additional stylesheets here -->
 
@@ -19,63 +19,67 @@
 <body>
     <div class="project-detail-container">
         <div class="project-detail-header">
-            <button class="close-button">&times;</button>
+            <button class="close-button" aria-label="Close project details">&times;</button>
             <div class="project-detail-image">
-                <img src="../assets/project_images/aquasense.png" alt="AquaSense AI">
+                <img class="responsive-image" src="../assets/project_images/aquasense.png" alt="AquaSense AI">
             </div>
             <h1 class="project-detail-title">AquaSense AI</h1>
         </div>
         
         <div class="project-detail-content">
             <div class="project-tags">
-                <span class="project-tag">Django</span>
                 <span class="project-tag">Machine Learning</span>
                 <span class="project-tag">Water Quality Analysis</span>
                 <span class="project-tag">IoT Integration</span>
-                <span class="project-tag">Gradient Boosting</span>
-                <span class="project-tag">Ensemble Models</span>
-                <span class="project-tag">Environmental Tech</span>
+                <span class="project-tag">Django</span>
                 <span class="project-tag">API Integration</span>
+                <span class="project-tag">Environmental Tech</span>
             </div>
             
             <div class="project-description">
                 <h2>Project Overview</h2>
-                <p>AquaSense AI is a sophisticated water quality analysis platform built with Django that employs ten different machine learning models, including Linear Regression, Polynomial Regression, SVR, Decision Trees, Random Forest, Gradient Boosting, and other ensemble models.</p>
+                <p>AquaSense AI is a Django-based <strong>water quality prediction system</strong> that uses multiple machine learning models to analyze water parameters and provide treatment suggestions. The system offers both manual input and <strong>IoT sensor integration</strong> options, making it versatile for various deployment scenarios.</p>
                 
-                <h2>Features</h2>
+                <h2>Key Features</h2>
                 <ul>
-                    <li>Analysis of water parameters through manual entry of seven parameters (temperature, dissolved oxygen, pH, conductivity, BOD, nitrate, and total coliform)</li>
-                    <li>IoT sensor data integration for four key parameters</li>
-                    <li>Primary GBR model for predictions with ensemble assessment from all ten models</li>
-                    <li>Comprehensive suggestion system offering remediation methods through:
-                        <ul>
-                            <li>Ayurvedic treatments</li>
-                            <li>Scientific interventions</li>
-                            <li>Cross-verification techniques</li>
-                        </ul>
-                    </li>
-                    <li>User-friendly interface with dedicated sections explaining challenges, vision, and mission</li>
-                    <li>Firebase-connected contact system for user inquiries and feedback</li>
+                    <li><strong>Comprehensive water quality parameter analysis</strong> (pH, turbidity, TDS, etc.)</li>
+                    <li>Real-time prediction using ensemble machine learning models</li>
+                    <li>Integration with IoT sensors for automated data collection</li>
+                    <li>Detailed water quality reports with treatment recommendations</li>
+                    <li>User-friendly interface for manual parameter input</li>
+                    <li>Historical data tracking and trend analysis</li>
                 </ul>
                 
-                <!-- Example of iframe integration capability -->
-                <h2>Live Dashboard</h2>
-                <div class="iframe-container">
-                    <!-- Placeholder for iframe content like `https://www.example.com` -->
-                    <iframe src="https://aquasense-ai.onrender.com/" width="100%" height="550" frameborder="0"></iframe>
-                </div>
-                
                 <h2>Technical Implementation</h2>
-                <p>The application uses Django for the backend, with a PostgreSQL database to store water quality data and prediction results. The machine learning models are implemented using scikit-learn and are integrated into the Django application using joblib for model serialization.</p>
+                <p>The system architecture includes several integrated components:</p>
+                <ul>
+                    <li><strong>Django web framework</strong> for the application backend</li>
+                    <li>Multiple ML models (<strong>Random Forest, SVM, XGBoost</strong>) for parameter analysis</li>
+                    <li>REST API for IoT sensor data integration</li>
+                    <li>PostgreSQL database for data storage and retrieval</li>
+                    <li>Interactive dashboards for data visualization</li>
+                    <li>Secure user authentication and data management</li>
+                </ul>
+                
+                <h2>Impact & Applications</h2>
+                <p>AquaSense AI addresses <strong>critical water quality monitoring needs</strong> in various contexts:</p>
+                <ul>
+                    <li>Municipal water treatment facilities</li>
+                    <li>Environmental monitoring agencies</li>
+                    <li>Research institutions studying water ecology</li>
+                    <li>Residential water quality management</li>
+                    <li>Agricultural water supply monitoring</li>
+                </ul>
             </div>
             
             <div class="project-links">
-                <a href="https://aquasense-ai.onrender.com/" class="btn btn-primary">View Live&nbsp;<i class="fa-solid fa-up-right-from-square"></i></a>
-                <a href="https://github.com/Prathameshv07/AquaSense_AI" class="btn btn-secondary">GitHub&nbsp;<i class="fab fa-github"></i></a>
+                <a href="https://github.com/yourusername/aquasense" class="btn btn-secondary">GitHub&nbsp;<i class="fab fa-github"></i></a>
+                <a href="#" class="btn btn-primary">Live Demo&nbsp;<i class="fas fa-external-link-alt"></i></a>
             </div>
         </div>
     </div>
     
+    <script src="../assets/js/project-images.js"></script>
     <script src="../assets/js/project_pages.js"></script>
 </body>
 </html>

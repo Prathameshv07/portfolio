@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 	<link rel="icon" type="image/png" href="assets/favicon.webp">
     <link rel="stylesheet" href="assets/css/index.css">
+    
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
 
     <meta property="og:title" content="Prathamesh's Portfolio">
     <meta property="og:url" content="https://prathameshv07.github.io/portfolio/">
@@ -25,7 +28,7 @@
         <div id="particles-js"></div>
         <div class="hero-content">
             <h1 class="hero-name">Prathamesh Vaidya</h1>
-            <p id="auto-typer" style="margin-bottom: 10px;">I'm passionate about <span id="typing-text"></span><span class="cursor">|</span></p>
+            <p id="auto-typer" style="margin-bottom: 15px;">I have hands-on experience in <span id="typing-text"></span><span class="cursor">|</span></p>
             <a href="#about" class="btn btn-primary">About Me</a>
         </div>
     </section>
@@ -33,14 +36,16 @@
     <!-- About Section -->
     <section id="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title" data-aos="fade-up">About Me</h2>
             <div class="about-content">
-                <div class="about-image">
+                <div class="about-image" data-aos="fade-right" data-aos-delay="100">
                     <img src="assets\my_profile_imresizer.jpg" alt="My Profile">
                 </div>
-                <div class="about-text">
-                    <p>Hello! I'm a data-driven Enthusiast with expertise in Python, JavaScript, and Machine Learning. My work spans data analytics, AI, and web development, solving real-world challenges with impactful solutions.</p>
-                    <p>I have built interactive dashboards, ML-powered applications, and business intelligence tools using frameworks like Django, and Power BI. Passionate about innovation and problem-solving, I continuously explore new technologies to create scalable and efficient applications.</p>
+                <div class="about-text" data-aos="fade-left" data-aos-delay="200">
+                    <p>Hello! I'm a <strong>data-driven enthusiast</strong> with specialized knowledge in <strong>Python</strong> and <strong>Machine Learning</strong>. My portfolio demonstrates my capabilities in <strong>data analytics</strong>, <strong>artificial intelligence</strong>, and intelligent application development.</p>
+                    
+                    <p>I've developed <strong>ML-powered applications</strong>, <strong>AI document analysis tools</strong>, and <strong>natural language processing solutions</strong> using technologies like Vector Search and Large Language Models. My projects showcase experience with <strong>AI Agents</strong>, <strong>LLM</strong>, <strong>Prompt Engineering</strong>, <strong>API Integration</strong>, and data visualization. I'm passionate about exploring emerging <strong>AI technologies</strong> to create intelligent, scalable, and efficient solutions to real-world problems.</p>
+                    
                     <a href="#projects" class="btn btn-primary">View My Projects</a>
                 </div>
             </div>
@@ -50,19 +55,21 @@
     <!-- Education/Experience Section -->
     <section id="education-experience">
         <div class="container">
-            <h2 class="section-title">Education</h2><!-- Academic & Professional Background -->
+            <h2 class="section-title" data-aos="fade-up">Education</h2><!-- Professional & Academic Background -->
             
-            <div id="section-header" class="section-header">
+            <div id="section-header" class="section-header" data-aos="fade-up" data-aos-delay="100">
                 <h3>Academic Background</h3> <!-- Background Information -->
                 <!-- <div class="section-toggle">
-                    <button class="toggle-btn active" onclick="toggleSection('education')">Education</button>
-                    <button class="toggle-btn" onclick="toggleSection('experience')">Work Experience</button>
+                    <select id="section-dropdown" onchange="toggleSectionFromDropdown(this.value)">
+                        <option value="education">Education</option>
+                        <option value="experience">Work Experience</option>
+                    </select>
                 </div> -->
             </div>
             
             <!-- Education Content -->
             <div id="education-content" class="toggle-content active">
-                <div class="education-card">
+                <div class="education-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="education-entry">
                         <h4 class="education-degree">Master of Science in Data Science</h4>
                         <p class="education-institution">Thakur College of Science and Commerce</p>
@@ -104,108 +111,175 @@
     <!-- Skills Section -->
     <section id="skills">
         <div class="container">
-            <h2 class="section-title">Skills</h2>
+            <h2 class="section-title" data-aos="fade-up">Skills & Expertise</h2>
             <div class="skills-container">
-                <!-- Tools Category -->
-                <div class="skill-category">
-                    <h3>Tools</h3>
+                <!-- Programming & Databases Category -->
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Programming & Databases</h3>
                     <div class="skills-grid">
-                        <div class="skill-item">
-                            <img src="assets/skills/sql.svg" class="custom-skill-icon" alt="SQL">
-                            <span class="skill-name">SQL</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="assets/skills/power-bi.png" class="custom-skill-icon" alt="Power BI">
-                            <span class="skill-name">Power BI</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="assets/skills/python.png" class="custom-skill-icon" alt="Python">
+                        <div class="skill-item" data-aos="zoom-in" data-aos-delay="150">
+                            <img src="assets/icons/python.svg" class="custom-skill-icon" alt="Python">
                             <span class="skill-name">Python</span>
                         </div>
-                        <div class="skill-item">
-                            <img src="assets/skills/git.svg" class="custom-skill-icon" alt="Git">
-                            <span class="skill-name">Git</span>
+                        <div class="skill-item" data-aos="zoom-in" data-aos-delay="200">
+                            <img src="assets/icons/sql.svg" class="custom-skill-icon" alt="SQL">
+                            <span class="skill-name">SQL</span>
                         </div>
-                        <div class="skill-item">
-                            <i class="fab fa-github skill-icon"></i>
-                            <span class="skill-name">GitHub</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="assets/skills/mongodb.svg" class="custom-skill-icon" alt="MongoDB">
+                        <div class="skill-item" data-aos="zoom-in" data-aos-delay="250">
+                            <img src="assets/icons/mongodb.svg" class="custom-skill-icon" alt="MongoDB">
                             <span class="skill-name">MongoDB</span>
                         </div>
-                        <div class="skill-item">
-                            <i class="fab fa-aws skill-icon"></i>
+                        <div class="skill-item" data-aos="zoom-in" data-aos-delay="500">
+                            <img src="assets/icons/sqlite.svg" class="custom-skill-icon" alt="SQLite">
+                            <span class="skill-name">SQLite</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tools Category -->
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Tools & Techniques</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item" data-aos="zoom-in" data-aos-delay="150">
+                            <img src="assets/icons/power-bi.svg" class="custom-skill-icon" alt="Power BI">
+                            <span class="skill-name">Power BI</span>
+                        </div>
+                        <div class="skill-item" data-aos="zoom-in" data-aos-delay="200">
+                            <img src="assets/icons/aws.svg" class="custom-skill-icon" alt="aws">
                             <span class="skill-name">AWS</span>
                         </div>
-                    </div>
-                </div>
-                
-                <!-- Techniques Category -->
-                <div class="skill-category">
-                    <h3>Techniques</h3>
-                    <div class="skills-grid">
-                        <!-- <div class="skill-item">
-                            <i class="fas fa-brain skill-icon"></i>
-                            <span class="skill-name">Machine Learning</span>
-                        </div> -->
-                        <div class="skill-item">
-                            <img src="assets/skills/chart-pie.png" class="custom-skill-icon" alt="Data Visualization">
-                            <span class="skill-name">Data Visualization</span>
-                        </div>
-                        <div class="skill-item">
-                            <img src="assets/skills/data-modelling.png" class="custom-skill-icon" alt="Data Visualization">
-                            <!-- <i class="fas fa-project-diagram skill-icon"></i> -->
+                        <div class="skill-item" data-aos="zoom-in" data-aos-delay="250">
+                            <img src="assets/icons/data-modelling.svg" class="custom-skill-icon" alt="Data Modeling">
                             <span class="skill-name">Data Modeling</span>
                         </div>
-                        <div class="skill-item">
-                            <i class="fas fa-code-branch skill-icon"></i>
-                            <span class="skill-name">Version Control</span>
+                        <div class="skill-item" data-aos="zoom-in" data-aos-delay="450">
+                            <img src="assets/icons/google-cloud.svg" class="custom-skill-icon" alt="Google Cloud">
+                            <span class="skill-name">Google Cloud</span>
                         </div>
-                        <div class="skill-item">
-                            <img src="assets/skills/chart-bar.png" class="custom-skill-icon" alt="Data Analysis">
-                            <span class="skill-name">Data Analysis</span>
+                        <div class="skill-item" data-aos="zoom-in" data-aos-delay="500">
+                            <img src="assets/icons/chart-pie.svg" class="custom-skill-icon" alt="Data Visualization">
+                            <span class="skill-name">Data Visualization</span>
                         </div>
-                        <!-- <div class="skill-item">
-                            <i class="fa-solid fa-microchip skill-icon"></i>
-                            <span class="skill-name">Artificial Intelligence</span>
-                        </div> -->
                     </div>
                 </div>
                 
-                <!-- Frameworks Category -->
-                <div class="skill-category">
-                    <h3>Frameworks</h3>
+                <!-- MLOp Category -->
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+                    <h3>MLOps</h3>
                     <div class="skills-grid">
-                        <div class="skill-item">
-                            <img src="assets/skills/flask-output.svg" class="custom-skill-icon" alt="Flask">
-                            <span class="skill-name">Flask</span>
+                        <div class="skill-item" data-aos="zoom-in" data-aos-delay="150">
+                            <img src="assets/icons/git.svg" class="custom-skill-icon" alt="Git">
+                            <span class="skill-name">Git</span>
                         </div>
-                        <div class="skill-item">
-                            <img src="assets/skills/django.webp" class="custom-skill-icon" alt="Data Visualization">
-                            <span class="skill-name">Django</span>
+                        <div class="skill-item" data-aos="zoom-in" data-aos-delay="200">
+                            <img src="assets/icons/github.svg" class="custom-skill-icon" alt="GitHub">
+                            <span class="skill-name">GitHub</span>
                         </div>
-                        <div class="skill-item">
-                            <img src="assets/skills/html.png" class="custom-skill-icon" alt="HTML5">
-                            <span class="skill-name">HTML5</span>
+                        <!-- <div class="skill-item" data-aos="zoom-in" data-aos-delay="250">
+                            <img src="assets/icons/gitlab.svg" class="custom-skill-icon" alt="GitLab">
+                            <span class="skill-name">GitLab</span>
+                        </div> -->
+                        <div class="skill-item" data-aos="zoom-in" data-aos-delay="300">
+                            <img src="assets/icons/github-actions.svg" class="custom-skill-icon" alt="Github Actions">
+                            <span class="skill-name">Github Actions</span>
                         </div>
-                        <div class="skill-item">
-                            <img src="assets/skills/css.png" class="custom-skill-icon" alt="HTML5">
-                            <span class="skill-name">CSS3</span>
+                        <div class="skill-item" data-aos="zoom-in" data-aos-delay="350">
+                            <img src="assets/icons/dvc.svg" class="custom-skill-icon" alt="DVC">
+                            <span class="skill-name">DVC</span>
                         </div>
-                        <div class="skill-item">
-                            <img src="assets/skills/bootsrap.png" class="custom-skill-icon" alt="Data Visualization">
-                            <span class="skill-name">Bootstrap</span>
+                        <div class="skill-item" data-aos="zoom-in" data-aos-delay="400">
+                            <img src="assets/icons/mlflow.svg" class="custom-skill-icon" alt="MLFlow">
+                            <span class="skill-name">MLFlow</span>
                         </div>
-                        <div class="skill-item">
-                            <img src="assets/skills/java-script.png" class="custom-skill-icon" alt="HTML5">
-                            <span class="skill-name">JavaScript</span>
+                        <div class="skill-item" data-aos="zoom-in" data-aos-delay="450">
+                            <img src="assets/icons/docker.svg" class="custom-skill-icon" alt="Docker">
+                            <span class="skill-name">Docker</span>
                         </div>
-                        <div class="skill-item">
-                            <img src="assets/skills/java.png" class="custom-skill-icon" alt="HTML5">
-                            <span class="skill-name">Java</span>
-                        </div>
+                        <!-- <div class="skill-item" data-aos="zoom-in" data-aos-delay="500">
+                            <img src="assets/icons/kubernetes.svg" class="custom-skill-icon" alt="Kubernetes">
+                            <span class="skill-name">Kubernetes</span>
+                        </div> -->
                     </div>
+                </div>
+            </div>
+
+            <!-- Libraries & Frameworks Row -->
+            <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                <h3>Libraries & Frameworks</h3>
+                <div class="libraries-grid">
+                    <div class="skill-item" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="assets/icons/pandas.svg" class="custom-skill-icon" alt="pandas">
+                        <span class="skill-name">Pandas</span>
+                    </div>
+                    <div class="skill-item" data-aos="zoom-in" data-aos-delay="150">
+                        <img src="assets/icons/numpy.svg" class="custom-skill-icon" alt="numpy">
+                        <span class="skill-name">NumPy</span>
+                    </div>
+                    <div class="skill-item" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="assets/icons/matplotlib.svg" class="custom-skill-icon" alt="Matplotlib">
+                        <span class="skill-name">Matplotlib</span>
+                    </div>
+                    <div class="skill-item" data-aos="zoom-in" data-aos-delay="250">
+                        <img src="assets/icons/seaborn.svg" class="custom-skill-icon" alt="Seaborn">
+                        <span class="skill-name">Seaborn</span>
+                    </div>
+                    <div class="skill-item" data-aos="zoom-in" data-aos-delay="300">
+                        <img src="assets/icons/tensorflow.svg" class="custom-skill-icon" alt="tensorflow">
+                        <span class="skill-name">TensorFlow</span>
+                    </div>
+                    <div class="skill-item" data-aos="zoom-in" data-aos-delay="350">
+                        <img src="assets/icons/pytorch.svg" class="custom-skill-icon" alt="pytorch">
+                        <span class="skill-name">PyTorch</span>
+                    </div>
+                    <div class="skill-item" data-aos="zoom-in" data-aos-delay="400">
+                        <img src="assets/icons/scikit-learn.svg" class="custom-skill-icon" alt="scikit-learn">
+                        <span class="skill-name">Scikit-Learn</span>
+                    </div>
+                    <div class="skill-item" data-aos="zoom-in" data-aos-delay="450">
+                        <img src="assets/icons/flask-output.svg" class="custom-skill-icon" alt="Flask">
+                        <span class="skill-name">Flask</span>
+                    </div>
+                    <div class="skill-item" data-aos="zoom-in" data-aos-delay="500">
+                        <img src="assets/icons/django.webp" class="custom-skill-icon" alt="Django">
+                        <span class="skill-name">Django</span>
+                    </div>
+                    <div class="skill-item" data-aos="zoom-in" data-aos-delay="550">
+                        <img src="assets/icons/fastapi.svg" class="custom-skill-icon" alt="fastapi">
+                        <span class="skill-name">FastAPI</span>
+                    </div>
+                    <div class="skill-item" data-aos="zoom-in" data-aos-delay="600">
+                        <img src="assets/icons/opencv.svg" class="custom-skill-icon" alt="OpenCV">
+                        <span class="skill-name">OpenCV</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Functional Areas Section -->
+    <section id="functional-areas">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Functional Areas</h2>
+            <div class="functional-areas-grid">
+                <div class="functional-area-item" data-aos="fade-up" data-aos-delay="300">
+                    <img src="assets/icons/ml.svg" class="custom-skill-icon" alt="Machine Learning">
+                    <h3>Machine Learning</h3>
+                </div>
+                <div class="functional-area-item" data-aos="fade-up" data-aos-delay="200">
+                    <img src="assets/icons/ai.svg" class="custom-skill-icon" alt="Artificial Intelligence">
+                    <h3>Artificial Intelligence</h3>
+                </div>
+                <div class="functional-area-item" data-aos="fade-up" data-aos-delay="400">
+                    <img src="assets/icons/dl.svg" class="custom-skill-icon" alt="Deep Learning">
+                    <h3>Deep Learning</h3>
+                </div>
+                <div class="functional-area-item" data-aos="fade-up" data-aos-delay="500">
+                    <img src="assets/icons/genai.svg" class="custom-skill-icon" alt="Generative AI">
+                    <h3>Generative AI</h3>
+                </div>
+                <div class="functional-area-item" data-aos="fade-up" data-aos-delay="100">
+                    <img src="assets/icons/chart-bar.svg" class="custom-skill-icon" alt="Data Analysis">
+                    <h3>Data Analysis</h3>
                 </div>
             </div>
         </div>
@@ -214,26 +288,50 @@
     <!-- Projects Section -->
     <section id="projects">
         <div class="container">
-            <h2 class="main-project-title">My Recent Work &nbsp;</h2>
+            <h2 class="main-project-title" data-aos="fade-up">My Recent Work &nbsp;</h2>
             <!-- <h2 class="section-title">Projects</h2> -->
             <div class="projects-grid">
 
-                <!-- AquaSense Project (Featured) -->
-                <div class="project-card main-project" data-project="project1" id="nl2sql">
+                <!-- AlyaAloft Project (First Position) -->
+                <div class="project-card main-project" data-project="project1" id="alyaaloft" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-image">
-                        <img src="assets/project_images/nl2sql.png" alt="nl2sql"><!-- size: 600x400 -->
+                        <img class="responsive-image" src="assets/project_images/alyaaloft_index.png" alt="AlyaAloft"><!-- size: 600x400 -->
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title fw-bold">AlyaAloft PDF Explainer</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">FastAPI</span>
+                            <span class="project-tag">LLM</span>
+                            <span class="project-tag">Vector Search</span>
+                            <span class="project-tag">Document Analysis</span>
+                            <span class="project-tag">OCR</span>
+                            <span class="project-tag">Prompt Techniques</span>
+                            <span class="project-tag">Artificial Intelligence</span>
+                            <span class="project-tag">Machine Learning</span>
+                            <span class="project-tag">NLP</span>
+                        </div>
+                        <p>A sophisticated <span class="fw-semi-bold">PDF document analysis and question-answering application</span> that leverages advanced AI models to provide detailed responses to user queries about PDF documents.</p>
+                        <div class="project-buttons">
+                            <a href="./pages/alyaaloft.html" class="btn btn-secondary btn-sm">View Project &nbsp;<i class="fa-solid fa-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NL2SQL Project (Second Position) -->
+                <div class="project-card" data-project="project1" id="nl2sql" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-image">
+                        <img class="responsive-image" src="assets/project_images/nl2sql.png" alt="nl2sql"><!-- size: 600x400 -->
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">SQL AI Agent</h3>
                         <div class="project-tags">
-                            <span class="project-tag">Python</span>
                             <span class="project-tag">AI Agent</span>
                             <span class="project-tag">NLP</span>
-                            <span class="project-tag">MySQL</span>
                             <span class="project-tag">Prompt Engineering</span>
                             <span class="project-tag">SQL Automation</span>
-                            <span class="project-tag">Data Retrieval</span>
                             <span class="project-tag">Gemini API</span>
+                            <span class="project-tag">MySQL</span>
                         </div>
                         <p>SQL AI Agent is an AI tool that transforms natural language into SQL queries, enabling non-technical users to access and query MySQL databases effortlessly and efficiently.</p>
                         <div class="project-buttons">
@@ -243,10 +341,10 @@
                     </div>
                 </div>
                 
-                <!-- Project 2 -->
-                <div class="project-card" data-project="project2" id="aquasense">
+                <!-- AquaSense Project (Third Position) -->
+                <div class="project-card" data-project="project2" id="aquasense" data-aos="fade-up" data-aos-delay="400">
                     <div class="project-image">
-                        <img src="assets/project_images/aquasense.png" alt="codex"><!-- size: 600x400 -->
+                        <img class="responsive-image" src="assets/project_images/aquasense.png" alt="codex"><!-- size: 600x400 -->
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">AquaSense AI</h3>
@@ -264,10 +362,10 @@
                     </div>
                 </div>
                 
-                <!-- Project 3 -->
-                <div class="project-card" data-project="project3" id="plag">
+                <!-- Plagiarism Detection Project (Fourth Position) -->
+                <div class="project-card" data-project="project3" id="plag" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-image">
-                        <img src="assets/project_images/plag.png" alt="plag"><!-- size: 600x400 -->
+                        <img class="responsive-image" src="assets/project_images/plag.png" alt="plag"><!-- size: 600x400 -->
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">Plagiarism Detection using ML</h3>
@@ -290,47 +388,49 @@
                     </div>
                 </div>
                 
-                <!-- Project 4 -->
-                <div class="project-card" data-project="project2" id="codex">
-                    <div class="project-image">
-                        <img src="assets/project_images/codex.jpeg" alt="codex"><!-- size: 600x400 -->
+            </div>
+                
+            <div class="view-all-container" data-aos="fade-up" data-aos-delay="100">
+                <a href="pages/beast_projects.html" class="view-all-link">View All Projects &nbsp;<i class="fa-solid fa-up-right-from-square"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Publications</h2>
+            <div class="research-grid">
+                <!-- Research Paper 1 -->
+                <div class="research-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="research-content">
+                        <h3 class="research-title">NLP-Based Toxic Comment Analysis</h3>
+                        <p class="research-journal"><img src="assets/icons/research-paper.svg" class="journal-icon" alt="Research Journal"> IJSRED, March 2025</p>
+                        <a href="#" class="btn btn-secondary">View Certificate &nbsp;<i class="fa-solid fa-up-right-from-square"></i></a>
                     </div>
-                    <div class="project-info">
-                        <h3 class="project-title">CodeX Drink Insights</h3>
-                        <div class="project-tags">
-                            <span class="project-tag">Power BI</span>
-                            <span class="project-tag">Data Visualization</span>
-                            <span class="project-tag">Market Analysis</span>
-                            <span class="project-tag">Consumer Insights</span>
-                            <span class="project-tag">Business Intelligence</span>
-                            <!-- <span class="project-tag">Survey Data</span>
-                            <span class="project-tag">Marketing Strategy</span>
-                            <span class="project-tag">Dashboard Design</span> -->
-                        </div>
-                        <p>A Power BI dashboard analyzing survey data from 10,000 respondents to provide strategic insights for CodeX, a German energy drink company entering the Indian market.</p>
-                        <div class="project-buttons">
-                            <!-- <a href="./pages/aquasense.html" target="_blank" onclick="event.stopPropagation()" class="btn btn-secondary btn-sm">View Project</a> -->
-                            <a href="./pages/codex.html" class="btn btn-secondary btn-sm">View Project &nbsp;<i class="fa-solid fa-up-right-from-square"></i></a>
-                        </div>
+                </div>
+
+                <!-- Research Paper 2 -->
+                <div class="research-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="research-content">
+                        <h3 class="research-title">ML-Based Stock Price Analysis</h3>
+                        <p class="research-journal"><img src="assets/icons/research-paper.svg" class="journal-icon" alt="Research Journal"> IJSRED, March 2024</p>
+                        <a href="https://drive.google.com/file/d/1R6C2bjbdmmPeKAnw_DeYteGcKBxHtTYE" class="btn btn-secondary">View Certificate &nbsp;<i class="fa-solid fa-up-right-from-square"></i></a>
                     </div>
                 </div>
             </div>
-                
-            <!-- <div class="view-all-container">
-                <a href="pages/beast_projects.html" class="view-all-link">View All Projects &nbsp;<i class="fa-solid fa-up-right-from-square"></i>
-                </a>
-            </div> -->
         </div>
     </section>
 
     <!-- Certificates Section -->
     <section id="certificates">
         <div class="container">
-            <h2 class="section-title">Certificates</h2>
+            <h2 class="section-title" data-aos="fade-up">Certificates</h2>
             <div class="certificates-grid">
 
                 <!-- Certificate 1 -->
-                <div class="certificate-item">
+                <div class="certificate-item" data-aos="zoom-in" data-aos-delay="100">
                     <a href="https://www.hackerrank.com/certificates/4dc2ea3b6fb1" target="_blank">
                         <img src="assets/certificates/sql_certificate.jpg" alt="SQL Certificate" class="certificate-img">
                     </a>
@@ -338,7 +438,7 @@
                 </div>
 
                 <!-- Certificate 2 -->
-                <div class="certificate-item">
+                <div class="certificate-item" data-aos="zoom-in" data-aos-delay="200">
                     <a href="https://www.hackerrank.com/certificates/af31a6ef0036" target="_blank">
                         <img src="assets/certificates/python_certificate.jpg" alt="Python Certificate" class="certificate-img">
                     </a>
@@ -346,37 +446,16 @@
                 </div>
 
                 <!-- Certificate 3 -->
-                <div class="certificate-item">
-                    <a href="https://www.credly.com/earner/earned/badge/ef9bf812-4ed7-4dc0-8607-e1b974c55676" target="_blank">
+                <div class="certificate-item" data-aos="zoom-in" data-aos-delay="300">
+                    <a href="https://www.credly.com/badges/ef9bf812-4ed7-4dc0-8607-e1b974c55676" target="_blank">
                         <img src="assets/certificates/Alteryx_Foundational.jpg" alt="Alteryx Foundational" class="certificate-img">
                     </a>
                     <p style="margin-bottom: 10px;">Alteryx Foundational</p>
                 </div>
-
-                <!-- Certificate 4 -->
-                <div class="certificate-item">
-                    <a href="https://www.credly.com/earner/earned/badge/4ba2cf1c-6202-4cf3-9fc5-0ff05cf06b75" target="_blank">
-                        <img src="assets/certificates/Machine_Learning_Fundamentals.jpg" alt="Machine Learning Fundamentals" class="certificate-img">
-                    </a>
-                    <p style="margin-bottom: 10px;">Machine Learning Fundamentals</p>
-                </div>
-
-                <!-- Certificate 5 -->
-                <div class="certificate-item">
-                    <a href="https://www.credly.com/earner/earned/badge/b08e8797-401e-4be8-a01b-fb04640b806a" target="_blank">
-                        <img src="assets/certificates/Alteryx_Auto_Insights.jpg" alt="Alteryx Auto Insights" class="certificate-img">
-                    </a>
-                    <p style="margin-bottom: 10px;">Alteryx Auto Insights</p>
-                </div>
-
-                <!-- Certificate 6 -->
-                <div class="certificate-item">
-                    <a href="https://www.credly.com/earner/earned/badge/8e78a123-012e-43e9-9e90-a6dc01590e7e" target="_blank">
-                        <img src="assets/certificates/AWS Intro to Cloud Sem 2.jpg" alt="AWS Intro to Cloud Sem 2" class="certificate-img">
-                    </a>
-                    <p style="margin-bottom: 10px;">AWS Intro to Cloud Semester 2</p>
-                </div>
-
+            </div>
+            
+            <div class="view-all-container" data-aos="fade-up" data-aos-delay="100">
+                <a href="pages/beast_certificates.html" class="view-all-link">View All Certificates &nbsp;<i class="fa-solid fa-up-right-from-square"></i></a>
             </div>
         </div>
     </section>
@@ -384,16 +463,16 @@
     <!-- Contact Section -->
     <section class="contact-section" id="contact">
         <div class="container">
-            <h2 class="section-title">Contact Us</h2>
+            <h2 class="section-title" data-aos="fade-up">Contact Us</h2>
             
             <div class="contact-container">
                 <!-- Left side illustration -->
-                <div class="contact-illustration">
+                <div class="contact-illustration" data-aos="fade-right" data-aos-delay="100">
                     <img src="assets/customer-support.png" alt="Contact illustration">
                 </div>
                 
                 <!-- Right side form -->
-                <div class="contact-form-container">
+                <div class="contact-form-container" data-aos="fade-left" data-aos-delay="200">
                     <form id="contactForm" class="contact-form" action="https://formspree.io/f/myzezgqr" method="POST">
                         <div class="form-group">
                             <label for="name">Your Name</label>
@@ -427,21 +506,26 @@
     <!-- Footer Section -->
     <footer id="footer">
         <div class="container">
-            <h2>Get In Touch</h2>
-            <div class="social-icons">
+            <h2 data-aos="fade-up">Get In Touch</h2>
+            <div class="social-icons" data-aos="fade-up" data-aos-delay="100">
                 <a href="https://www.linkedin.com/in/prathameshv07/" class="social-icon"><i class="fab fa-linkedin"></i></a>
                 <a href="https://github.com/prathameshv07" class="social-icon"><i class="fab fa-github"></i></a>
                 <a href="mailto:prathameshsvaidya77@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
             </div>
-            <p class="copyright">&copy; Prathamesh Vaidya - Portfolio</p>
+            <p class="copyright" data-aos="fade-up" data-aos-delay="200">&copy; Prathamesh Vaidya - Portfolio</p>
         </div>
     </footer>
 
     <!-- Particles.js Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
 
+    <!-- AOS Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
     <!-- JavaScript for Node Animation and Modal -->
     <script src="assets/js/index.js"></script>
+
+    <!-- Add our specialized project images handler -->
+    <script src="assets/js/project-images.js"></script>
 </body>
 </html>

@@ -1,0 +1,255 @@
+/* Main Styles for Certificates Page */
+
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background-color: #212529;
+    color: #fff;
+    padding: 2rem 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header nav {
+    margin-top: 1rem;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #e9b421;
+}
+ 
+.responsive-image {
+    max-width: 100%;
+    max-height: 100%;
+    transition: width 0.3s, height 0.3s; /* Optional: smooth transition */
+    position: relative;
+    z-index: 2; /* Ensure image is above the blurred background */
+}
+
+/* Filter Section Styles */
+.certificate-filters {
+    background-color: #fff;
+    padding: 2rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.filter-container {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 1.5rem 2rem;
+}
+
+.filter-container h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: #212529;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.filter-groups {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.filter-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.filter-group h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+    color: #555;
+    font-weight: 500;
+}
+
+.filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Dropdown Filter Styles */
+.filter-options select {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 0.9rem;
+    color: #333;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem center;
+    background-size: 1em;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.clear-filters {
+    background-color: transparent;
+    border: 1px solid #212529;
+    color: #212529;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.clear-filters:hover {
+    background-color: #212529;
+    color: #fff;
+}
+
+/* Certificates Grid Styles */
+.all-certificates {
+    padding: 3rem 0;
+}
+
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.certificate-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: block; /* Ensure card displays properly */
+}
+
+.certificate-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.certificate-image {
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa; /* Light background to make certificates stand out */
+    padding: 10px;
+    position: relative; /* Add for absolute positioning of children if needed */
+    border-bottom: 1px solid #eee; /* Subtle separator */
+}
+
+.certificate-image img {
+    max-width: 90%;
+    max-height: 90%;
+    width: auto !important; /* Override any other width settings */
+    height: auto !important; /* Override any other height settings */
+    object-fit: contain;
+    transition: transform 0.5s ease;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle shadow for the certificate */
+}
+
+.certificate-card:hover .certificate-image img {
+    transform: scale(1.05);
+}
+
+.certificate-info {
+    padding: 1.5rem;
+}
+
+.certificate-title {
+    font-size: 1.2rem;
+    margin: 0 0 0.5rem 0;
+    color: #212529;
+}
+
+.certificate-issuer {
+    color: #1d7e9d;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.certificate-date {
+    color: #6c757d;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.certificate-link {
+    display: inline-block;
+    background-color: #1d7e9d;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.certificate-link:hover {
+    background-color: #166d8a;
+    transform: translateY(-2px);
+}
+
+/* Footer Styles */
+footer {
+    background-color: #212529;
+    color: #ffffff;
+    padding: 1.5rem 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .certificates-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .filter-groups {
+        flex-direction: column;
+        gap: 1rem;
+    }
+} 

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Certificates - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+	<link rel="icon" type="image/png" href="../assets/favicon.webp">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../assets/css/beast_certificates.css">
+
+    <meta property="og:title" content="Prathamesh's Portfolio - Certificates">
+    <meta property="og:url" content="https://prathameshv07.github.io/portfolio/">
+    <meta property="og:image" content="https://prathameshv07.github.io/portfolio/assets/favicon.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:description" content="View all my professional certificates">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>All Certificates</h1>
+            <nav>
+                <a href="../index.html#certificates">Back to Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="certificate-filters">
+        <div class="container">
+            <div class="filter-container">
+                <h2>Filter By:</h2>
+                <div class="filter-groups">
+                    <div class="filter-group">
+                        <h3>Category</h3>
+                        <div class="filter-options">
+                            <select name="category" id="category-filter">
+                                <option value="">All Categories</option>
+                                <!-- Will be dynamically populated by JavaScript -->
+                            </select>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <h3>Platform</h3>
+                        <div class="filter-options">
+                            <select name="platform" id="platform-filter">
+                                <option value="">All Platforms</option>
+                                <!-- Will be dynamically populated by JavaScript -->
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <button class="clear-filters">Clear Filters</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="all-certificates" id="certificates">
+        <div class="container">
+            <div class="certificates-grid">
+                <!-- Certificate 1 -->
+                <div class="certificate-card" data-category="programming" data-platform="hackerrank" data-aos="fade-up" data-aos-delay="100">
+                    <div class="certificate-image">
+                        <img class="responsive-image" src="../assets/certificates/sql_certificate.jpg" alt="SQL Certificate">
+                    </div>
+                    <div class="certificate-info">
+                        <h3 class="certificate-title">SQL Certificate</h3>
+                        <p class="certificate-issuer">HackerRank</p>
+                        <p class="certificate-date">Issued: May 2024</p>
+                        <a href="https://www.hackerrank.com/certificates/4dc2ea3b6fb1" target="_blank" class="certificate-link">View Certificate &nbsp;<i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <!-- Certificate 2 -->
+                <div class="certificate-card" data-category="programming" data-platform="hackerrank" data-aos="fade-up" data-aos-delay="200">
+                    <div class="certificate-image">
+                        <img class="responsive-image" src="../assets/certificates/python_certificate.jpg" alt="Python Certificate">
+                    </div>
+                    <div class="certificate-info">
+                        <h3 class="certificate-title">Python Certificate</h3>
+                        <p class="certificate-issuer">HackerRank</p>
+                        <p class="certificate-date">Issued: May 2024</p>
+                        <a href="https://www.hackerrank.com/certificates/af31a6ef0036" target="_blank" class="certificate-link">View Certificate &nbsp;<i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <!-- Certificate 3 -->
+                <div class="certificate-card" data-category="analytics" data-platform="alteryx,credly" data-aos="fade-up" data-aos-delay="300">
+                    <div class="certificate-image">
+                        <img class="responsive-image" src="../assets/certificates/Alteryx_Foundational.jpg" alt="Alteryx Foundational">
+                    </div>
+                    <div class="certificate-info">
+                        <h3 class="certificate-title">Alteryx Foundational</h3>
+                        <p class="certificate-issuer">Alteryx (via Credly)</p>
+                        <p class="certificate-date">Issued: December 2024</p>
+                        <a href="https://www.credly.com/badges/ef9bf812-4ed7-4dc0-8607-e1b974c55676" target="_blank" class="certificate-link">View Certificate &nbsp;<i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <!-- Certificate 4 -->
+                <div class="certificate-card" data-category="machine-learning,data-science" data-platform="alteryx,credly" data-aos="fade-up" data-aos-delay="100">
+                    <div class="certificate-image">
+                        <img class="responsive-image" src="../assets/certificates/Machine_Learning_Fundamentals.jpg" alt="Machine Learning Fundamentals">
+                    </div>
+                    <div class="certificate-info">
+                        <h3 class="certificate-title">Machine Learning Fundamentals</h3>
+                        <p class="certificate-issuer">Credly</p>
+                        <p class="certificate-date">Issued: December 2024</p>
+                        <a href="https://www.credly.com/badges/4ba2cf1c-6202-4cf3-9fc5-0ff05cf06b75" target="_blank" class="certificate-link">View Certificate &nbsp;<i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <!-- Certificate 5 -->
+                <div class="certificate-card" data-category="analytics" data-platform="alteryx,credly" data-aos="fade-up" data-aos-delay="200">
+                    <div class="certificate-image">
+                        <img class="responsive-image" src="../assets/certificates/Alteryx_Auto_Insights.jpg" alt="Alteryx Auto Insights">
+                    </div>
+                    <div class="certificate-info">
+                        <h3 class="certificate-title">Alteryx Auto Insights</h3>
+                        <p class="certificate-issuer">Alteryx (via Credly)</p>
+                        <p class="certificate-date">Issued: January 2025</p>
+                        <a href="https://www.credly.com/badges/b08e8797-401e-4be8-a01b-fb04640b806a" target="_blank" class="certificate-link">View Certificate &nbsp;<i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <!-- Certificate 6 -->
+                <div class="certificate-card" data-category="cloud" data-platform="aws" data-aos="fade-up" data-aos-delay="300">
+                    <div class="certificate-image">
+                        <img class="responsive-image" src="../assets/certificates/AWS Intro to Cloud Sem 2.jpg" alt="AWS Intro to Cloud Sem 2">
+                    </div>
+                    <div class="certificate-info">
+                        <h3 class="certificate-title">AWS Intro to Cloud Semester 2</h3>
+                        <p class="certificate-issuer">Amazon Web Services</p>
+                        <p class="certificate-date">Issued: December 2022</p>
+                        <a href="https://www.credly.com/badges/8e78a123-012e-43e9-9e90-a6dc01590e7e" target="_blank" class="certificate-link">View Certificate &nbsp;<i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; Prathamesh Vaidya - Portfolio</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="../assets/js/beast_certificates.js"></script>
+</body>
+</html> 

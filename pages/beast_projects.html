@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Projects - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
 	<link rel="icon" type="image/png" href="../assets/favicon.webp">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../assets/css/beast_projects.css">
@@ -36,37 +37,25 @@
                         <div class="filter-options">
                             <select name="tool" id="tool-filter">
                                 <option value="">All Tools</option>
-                                <option value="django">Django</option>
-                                <option value="react">React</option>
-                                <option value="python">Python</option>
-                                <option value="powerbi">Power BI</option>
-                                <option value="tableau">Tableau</option>
+                                <!-- Will be dynamically populated by JavaScript -->
                             </select>
                         </div>
                     </div>
                     <div class="filter-group">
                         <h3>Technique</h3>
                         <div class="filter-options">
-                            <select name="tool" id="technique-filter">
+                            <select name="technique" id="technique-filter">
                                 <option value="">All Techniques</option>
-                                <option value="machine-learning">Machine Learning</option>
-                                <option value="data-analysis">Data Analysis</option>
-                                <option value="api-integration">API Integration</option>
-                                <option value="visualization">Data Visualization</option>
-                                <option value="iot">IoT Integration</option>
+                                <!-- Will be dynamically populated by JavaScript -->
                             </select>
                         </div>
                     </div>
                     <div class="filter-group">
                         <h3>Industry</h3>
                         <div class="filter-options">
-                            <select name="tool" id="industry-filter">
+                            <select name="industry" id="industry-filter">
                                 <option value="">All Industries</option>
-                                <option value="environment">Environment</option>
-                                <option value="healthcare">Healthcare</option>
-                                <option value="finance">Finance</option>
-                                <option value="retail">Retail</option>
-                                <option value="hospitality">Hospitality</option>
+                                <!-- Will be dynamically populated by JavaScript -->
                             </select>
                         </div>
                     </div>
@@ -79,8 +68,50 @@
     <section class="all-projects" id="projects">
         <div class="container">
             <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card" data-project="aquasense" data-tools="django,python" data-techniques="machine-learning,iot-integration" data-industry="environment">
+                <!-- Project AlyaAloft -->
+                <div class="project-card" data-project="alyaaloft" data-tools="python,fastapi" data-techniques="machine-learning,ai,nlp,vector-search,document-analysis" data-industry="technology" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image">
+                        <img src="../assets/project_images/alyaaloft.png" alt="AlyaAloft PDF Explainer">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">AlyaAloft PDF Explainer</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">FastAPI</span>
+                            <span class="project-tag">LLM</span>
+                            <span class="project-tag">Machine Learning</span>
+                            <span class="project-tag">NLP</span>
+                            <span class="project-tag">Vector Search</span>
+                            <span class="project-tag">Document Analysis</span>
+                        </div>
+                        <p class="project-excerpt">A sophisticated PDF document analysis and question-answering application that leverages advanced AI models to provide detailed responses to user queries about PDF documents.</p>
+                        <a href="alyaaloft.html" class="project-link">View Project &nbsp;<i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <!-- SQL AI Agent Project -->
+                <div class="project-card" data-project="nl2sql" data-tools="python,gemini" data-techniques="nlp,ai,prompt-engineering,sql-automation" data-industry="technology" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <img src="../assets/project_images/nl2sql.png" alt="SQL AI Agent">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">SQL AI Agent</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">AI Agent</span>
+                            <span class="project-tag">NLP</span>
+                            <span class="project-tag">MySQL</span>
+                            <span class="project-tag">Prompt Engineering</span>
+                            <span class="project-tag">SQL Automation</span>
+                            <span class="project-tag">Gemini API</span>
+                        </div>
+                        <p class="project-excerpt">An AI tool that transforms natural language into SQL queries, enabling non-technical users to access and query MySQL databases effortlessly and efficiently.</p>
+                        <a href="nl2sql.html" class="project-link">View Project &nbsp;<i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <!-- Project AquaSense -->
+                <div class="project-card" data-project="aquasense" data-tools="django,python" data-techniques="machine-learning,iot-integration,api-integration,water-quality-analysis" data-industry="environment" data-aos="fade-up" data-aos-delay="300">
                     <div class="project-image">
                         <img src="../assets/project_images/aquasense.png" alt="AquaSense AI">
                     </div>
@@ -88,34 +119,52 @@
                         <h3 class="project-title">AquaSense AI</h3>
                         <div class="project-tags">
                             <span class="project-tag">Django</span>
+                            <span class="project-tag">Python</span>
                             <span class="project-tag">Machine Learning</span>
                             <span class="project-tag">Water Quality Analysis</span>
                             <span class="project-tag">IoT Integration</span>
-                            <!-- <span class="project-tag">API Integration</span>
-                            <span class="project-tag">Gradient Boosting</span>
-                            <span class="project-tag">Ensemble Models</span>
-                            <span class="project-tag">Environmental Tech</span>
-                            <span class="project-tag">Django</span>
-                            <span class="project-tag">Machine Learning</span>
-                            <span class="project-tag">Water Quality Analysis</span> -->
+                            <span class="project-tag">API Integration</span>
                         </div>
                         <p class="project-excerpt">A Django-based water quality prediction system using multiple machine learning models that provides parameter assessment and treatment suggestions through both manual input and IoT sensor integration.</p>
                         <a href="aquasense.html" class="project-link">View Project &nbsp;<i class="fa-solid fa-up-right-from-square"></i></a>
                     </div>
                 </div>
 
-                <!-- Project 2 (Example) -->
-                <div class="project-card" data-project="business-insights" data-tools="powerbi" data-techniques="data-analysis,visualization" data-industry="finance,retail">
+                <!-- Project Plagiarism Detection -->
+                <div class="project-card" data-project="plagiarism-detection" data-tools="flask,python" data-techniques="machine-learning,nlp,text-analysis" data-industry="education,technology" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-image">
-                        <img src="../assets/project_images/codex.jpeg" alt="Business Insights 360">
+                        <img src="../assets/project_images/plag.png" alt="Plagiarism Detection using ML">
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Plagiarism Detection using ML</h3>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Flask</span>
+                            <span class="project-tag">Machine Learning</span>
+                            <span class="project-tag">Web Development</span>
+                            <span class="project-tag">NLP</span>
+                            <span class="project-tag">Text Analysis</span>
+                            <span class="project-tag">Google Search API</span>
+                        </div>
+                        <p class="project-excerpt">A web-based tool that detects plagiarism by comparing text against internet sources and between files using Python and the KMP algorithm.</p>
+                        <a href="plag.html" class="project-link">View Project &nbsp;<i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <!-- Project CodeX -->
+                <div class="project-card" data-project="codex" data-tools="powerbi" data-techniques="data-analysis,data-visualization,market-analysis" data-industry="retail,food-beverage" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <img src="../assets/project_images/codex.jpeg" alt="CodeX Drink Insights">
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">CodeX Drink Insights</h3>
                         <div class="project-tags">
                             <span class="project-tag">Power BI</span>
+                            <span class="project-tag">Data Analysis</span>
                             <span class="project-tag">Data Visualization</span>
                             <span class="project-tag">Market Analysis</span>
                             <span class="project-tag">Consumer Insights</span>
+                            <span class="project-tag">F&B Marketing</span>
                             <span class="project-tag">Business Intelligence</span>
                         </div>
                         <p class="project-excerpt">A Power BI dashboard analyzing survey data from 10,000 respondents to provide strategic insights for CodeX, a German energy drink company entering the Indian market.</p>
@@ -123,38 +172,19 @@
                     </div>
                 </div>
 
-                <!-- Project 3 (Example) -->
-                <div class="project-card" data-project="hospitality-analysis" data-tools="powerbi" data-techniques="data-analysis,visualization" data-industry="hospitality">
+                <!-- Project Atliq -->
+                <div class="project-card" data-project="atliq" data-tools="python" data-techniques="data-analysis,data-visualization" data-industry="retail" data-aos="fade-up" data-aos-delay="300">
                     <div class="project-image">
-                        <img src="../assets/project_images/plag.png" alt="Hospitality Analysis">
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Plagiarism Detection using ML</h3>
-                        <div class="project-tags">
-                            <span class="project-tag">Flask</span>
-                            <span class="project-tag">Machine Learning</span>
-                            <span class="project-tag">Web Development</span>
-                            <span class="project-tag">Plagiarism Detection</span>
-                            <span class="project-tag">NLP</span>
-                            <span class="project-tag">Text Analysis</span>
-                        </div>
-                        <p class="project-excerpt">A web-based tool that detects plagiarism by comparing text against internet sources and between files using Python and the KMP algorithm.</p>
-                        <a href="plag.html" class="project-link">View Project &nbsp;<i class="fa-solid fa-up-right-from-square"></i></a>
-                    </div>
-                </div>
-
-                <!-- Project 4 (Example) -->
-                <div class="project-card centered" data-project="sales-analysis" data-tools="tableau" data-techniques="data-analysis,visualization" data-industry="retail">
-                    <div class="project-image">
-                        <img src="../assets/project_images/atliq.webp" alt="Sales and Finance Analytics">
+                        <img src="../assets/project_images/atliq.webp" alt="Atliq Mart Analysis">
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">Atliq Mart Analysis</h3>
                         <div class="project-tags">
                             <span class="project-tag">Python</span>
-                            <span class="project-tag">Retail Analytics</span>
                             <span class="project-tag">Pandas</span>
                             <span class="project-tag">Matplotlib</span>
+                            <span class="project-tag">Data Analysis</span>
+                            <span class="project-tag">Retail Analytics</span>
                             <span class="project-tag">Promotional Analysis</span>
                             <span class="project-tag">Business Intelligence</span> 
                         </div>
@@ -162,23 +192,6 @@
                         <a href="atliq.html" class="project-link">View Project &nbsp;<i class="fa-solid fa-up-right-from-square"></i></a>
                     </div>
                 </div>
-
-                <!-- Project 5 (Example) -->
-                <!-- <div class="project-card" data-project="campaign-analysis" data-tools="powerbi,python" data-techniques="data-analysis" data-industry="retail">
-                    <div class="project-image">
-                        <img src="assets/campaign-analysis.png" alt="Festive Campaign Analysis">
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Festive Campaign Analysis</h3>
-                        <div class="project-tags">
-                            <span class="project-tag">Power BI</span>
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">Retail</span>
-                        </div>
-                        <p class="project-excerpt">Analyzed data from Diwali and Christmas promotions using SQL and PowerBI. Uncovered which promotions worked best, increased sales and customer engagement.</p>
-                        <a href="project-campaign-analysis.html" class="project-link">View Project &nbsp;<i class="fa-solid fa-up-right-from-square"></i></a>
-                    </div>
-                </div> -->
             </div>
         </div>
     </section>
@@ -189,6 +202,7 @@
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="../assets/js/beast_projects.js"></script>
 </body>
 </html>

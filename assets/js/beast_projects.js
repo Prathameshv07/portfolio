@@ -92,10 +92,59 @@
 
 // All Projects Page JavaScript
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize AOS animation library
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false
+    });
+    
     // Elements
     const projectCards = document.querySelectorAll('.project-card');
-    const filterDropdowns = document.querySelectorAll('.filter-options select');
+    const toolFilter = document.getElementById('tool-filter');
+    const techniqueFilter = document.getElementById('technique-filter');
+    const industryFilter = document.getElementById('industry-filter');
     const clearFiltersButton = document.querySelector('.clear-filters');
+
+    // Collect all unique filter values
+    const tools = new Set();
+    const techniques = new Set();
+    const industries = new Set();
+    
+    // Populate sets with unique values from data attributes
+    projectCards.forEach(card => {
+        const cardTools = card.dataset.tools ? card.dataset.tools.split(',') : [];
+        const cardTechniques = card.dataset.techniques ? card.dataset.techniques.split(',') : [];
+        const cardIndustries = card.dataset.industry ? card.dataset.industry.split(',') : [];
+        
+        cardTools.forEach(tool => tools.add(tool));
+        cardTechniques.forEach(technique => techniques.add(technique));
+        cardIndustries.forEach(industry => industries.add(industry));
+    });
+    
+    // Function to populate a dropdown with options
+    function populateDropdown(dropdown, values) {
+        // Clear existing options except the "All" option
+        while (dropdown.options.length > 1) {
+            dropdown.remove(1);
+        }
+        
+        // Add options for the values
+        values.forEach(value => {
+            const option = document.createElement('option');
+            option.value = value;
+            option.textContent = value.split('-').map(word => 
+                word.charAt(0).toUpperCase() + word.slice(1)
+            ).join(' ');
+            dropdown.appendChild(option);
+        });
+    }
+    
+    // Populate the dropdowns
+    populateDropdown(toolFilter, tools);
+    populateDropdown(techniqueFilter, techniques);
+    populateDropdown(industryFilter, industries);
 
     // Filter state
     let activeFilters = {
@@ -110,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Get card data attributes
             const cardTools = card.dataset.tools ? card.dataset.tools.split(',') : [];
             const cardTechniques = card.dataset.techniques ? card.dataset.techniques.split(',') : [];
-            const cardIndustry = card.dataset.industry ? card.dataset.industry.split(',') : [];
+            const cardIndustries = card.dataset.industry ? card.dataset.industry.split(',') : [];
 
             // Check if card matches all active filters
             let shouldShow = true;
@@ -127,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // If card should still be shown and industry filter is active, check if card has that industry
             if (shouldShow && activeFilters.industry.length > 0) {
-                shouldShow = activeFilters.industry.some(industry => cardIndustry.includes(industry));
+                shouldShow = activeFilters.industry.some(industry => cardIndustries.includes(industry));
             }
 
             // Show or hide card based on filter results
@@ -140,30 +189,27 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Update active filters when dropdowns change
-    filterDropdowns.forEach(dropdown => {
-        dropdown.addEventListener('change', function() {
-            const filterType = this.name; // 'tool', 'technique', or 'industry'
-            const filterValue = this.value;
-
-            // Reset this specific filter type
-            activeFilters[filterType] = [];
-            
-            // If a value is selected, add it to active filters
-            if (filterValue) {
-                activeFilters[filterType].push(filterValue);
-            }
-
-            // Apply the updated filters
+    toolFilter.addEventListener('change', function() {
+        activeFilters.tool = this.value ? [this.value] : [];
+        applyFilters();
+    });
+    
+    techniqueFilter.addEventListener('change', function() {
+        activeFilters.technique = this.value ? [this.value] : [];
             applyFilters();
         });
+    
+    industryFilter.addEventListener('change', function() {
+        activeFilters.industry = this.value ? [this.value] : [];
+        applyFilters();
     });
 
     // Clear all filters
     clearFiltersButton.addEventListener('click', function() {
         // Reset all dropdowns to default
-        filterDropdowns.forEach(dropdown => {
-            dropdown.selectedIndex = 0;
-        });
+        toolFilter.selectedIndex = 0;
+        techniqueFilter.selectedIndex = 0;
+        industryFilter.selectedIndex = 0;
 
         // Reset active filters
         activeFilters = {
