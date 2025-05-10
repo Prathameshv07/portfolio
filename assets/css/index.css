@@ -206,40 +206,6 @@ a {
     margin: 0;
 }
 
-/* Toggle Buttons */
-/* .section-toggle {
-    display: flex;
-}
-
-.toggle-btn {
-    padding: 0.5rem 1rem;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-left: 0.5rem;
-}
-
-.toggle-btn:first-child {
-    border-radius: 4px 0 0 4px;
-    margin-left: 0;
-}
-
-.toggle-btn:last-child {
-    border-radius: 0 4px 4px 0;
-}
-
-.toggle-btn.active {
-    background-color: rgba(255, 255, 255, 0.25);
-    border-color: rgba(255, 255, 255, 0.5);
-    font-weight: 600;
-}
-
-.toggle-btn:hover:not(.active) {
-    background-color: rgba(255, 255, 255, 0.15);
-} */
-
 /* Dropdown Select Styling */
 #section-dropdown {
     padding: 0.5rem 1rem;
@@ -312,6 +278,13 @@ a {
 .education-date {
     font-style: italic;
     color: #6c757d;
+    text-align: left;
+}
+
+.education-score {
+    font-style: normal;
+    color: #212529;
+    /* color: #6c757d; */
     text-align: left;
 }
 
